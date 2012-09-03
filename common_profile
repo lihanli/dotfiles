@@ -19,7 +19,7 @@ complete -o bashdefault -o default -o nospace -F _gitk gin
 alias gco='git checkout'
 complete -o bashdefault -o default -o nospace -F _gitk gco
 
-alias drb='rspec --drb --fail-fast -d -f d'
+alias drb='rspec --drb --fail-fast -f d'
 alias migrate='rake db:migrate && rake db:test:prepare'
 alias be='bundle exec'
 
