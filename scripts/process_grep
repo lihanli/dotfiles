@@ -1,0 +1,2 @@
+#!/usr/bin/env ruby
+system "ps auxww | grep #{ARGV[0]} | grep -v grep"
