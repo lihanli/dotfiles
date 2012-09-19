@@ -13,11 +13,16 @@ alias grhh='git reset --hard HEAD'
 alias gdc='git diff --cached'
 
 alias gout='git push origin'
-complete -o bashdefault -o default -o nospace -F _gitk gout
 alias gin='git pull origin'
-complete -o bashdefault -o default -o nospace -F _gitk gin
 alias gco='git checkout'
-complete -o bashdefault -o default -o nospace -F _gitk gco
+alias hdep='git push heroku'
+
+for cmd in gout gin gco hdep
+do
+	complete -o bashdefault -o default -o nospace -F _gitk $cmd
+done
+
+
 
 alias drb='rspec --drb --fail-fast -f d'
 alias migrate='rake db:migrate && rake db:test:prepare'
