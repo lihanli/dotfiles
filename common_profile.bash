@@ -22,8 +22,6 @@ do
 	complete -o bashdefault -o default -o nospace -F _gitk $cmd
 done
 
-
-
 alias drb='rspec --drb --fail-fast -f d'
 alias migrate='rake db:migrate && rake db:test:prepare'
 alias be='bundle exec'
