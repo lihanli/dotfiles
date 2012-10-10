@@ -1,6 +1,11 @@
-export PATH=$PATH:$HOME/node_modules/.bin
-export PATH=$PATH:$HOME/scripts
-export PATH=$PATH:$HOME/dotfiles/scripts
+GC="$HOME/git-completion.bash"
+
+[ -f $GC ] && source $GC
+
+for path in '/node_modules/.bin' '/scripts' '/dotfiles/scripts'
+do
+	export PATH=$PATH:$HOME$path
+done
 
 # git aliases
 alias g='git status'
@@ -31,4 +36,6 @@ alias tu='ruby -Itest'
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
-PS1="\\[$(tput setaf 7)\\]\\w \$(parse_git_branch)> \\[$(tput sgr0)\\]"
+PS1="\\[$(tput setaf 7)\\]\\w\$(parse_git_branch)> \\[$(tput sgr0)\\]"
+
+[[ $OSTYPE =~ ^darwin.*$ ]] && source .osx.bash
