@@ -32,6 +32,7 @@ alias migrate='rake db:migrate && rake db:test:prepare'
 alias be='bundle exec'
 alias ispec='be rspec --fail-fast -f d'
 alias tu='ruby -Itest'
+alias lsg='ll | grep'
 
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
