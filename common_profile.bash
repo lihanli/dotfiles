@@ -2,7 +2,7 @@ GC="$HOME/git-completion.bash"
 
 [ -f $GC ] && source $GC
 
-for path in '/node_modules/.bin' '/scripts' '/dotfiles/scripts'
+for path in '/node_modules/.bin' '/scripts' '/dotfiles/scripts' '/.rbenv/bin'
 do
 	export PATH=$PATH:$HOME$path
 done
