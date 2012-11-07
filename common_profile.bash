@@ -2,7 +2,13 @@ GC="$HOME/git-completion.bash"
 
 [ -f $GC ] && source $GC
 
-for path in '/node_modules/.bin' '/scripts' '/dotfiles/scripts' '/.rbenv/bin'
+# if rbenv installed
+if [ -d "$HOME/.rbenv" ]; then
+	export PATH=$PATH:$HOME/.rbenv/bin
+	eval "$(rbenv init -)"
+fi
+
+for path in '/node_modules/.bin' '/scripts' '/dotfiles/scripts'
 do
 	export PATH=$PATH:$HOME$path
 done
