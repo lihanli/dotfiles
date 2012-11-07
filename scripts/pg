@@ -1,2 +1,0 @@
-#!/bin/bash
-ps auxww | grep $1 | grep -v pg | grep -v grep
