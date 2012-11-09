@@ -11,3 +11,6 @@ export TERM=xterm-color
 #sets up proper alias commands when called
 alias ls='ls -G'
 alias ll='ls -hl -la'
+
+# add keys to agent by default
+ssh-add
