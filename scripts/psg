@@ -1,0 +1,2 @@
+#!/bin/bash
+ps auxww | grep $1 | grep -v psg | grep -v grep
