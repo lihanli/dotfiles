@@ -41,10 +41,9 @@ alias tu='ruby -Itest'
 alias lsg='ll | grep'
 
 parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-PS1_PREFIX=''
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
 	PS1_PREFIX='\[$(tput setaf 2)\]\u\[$(tput sgr0)\]:'
 fi
