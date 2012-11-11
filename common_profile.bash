@@ -8,8 +8,7 @@ if [ -d "$HOME/.rbenv" ]; then
 	eval "$(rbenv init -)"
 fi
 
-for path in '/node_modules/.bin' '/scripts' '/dotfiles/scripts'
-do
+for path in '/node_modules/.bin' '/scripts' '/dotfiles/scripts'; do
 	export PATH=$PATH:$HOME$path
 done
 
@@ -28,8 +27,7 @@ alias gin='git pull origin'
 alias gco='git checkout'
 alias hdep='git push heroku'
 
-for cmd in gout gin gco hdep
-do
+for cmd in "gout gin gco hdep"; do
 	complete -o bashdefault -o default -o nospace -F _gitk $cmd
 done
 
