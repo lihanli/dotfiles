@@ -5,11 +5,9 @@
 ############################
 
 ########## Variables
-
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="common_profile.bash vimrc osx.bash"    # list of files/folders to symlink in homedir
-
+files=(common_profile.bash vimrc osx.bash)
 ##########
 
 # create dotfiles_old in homedir
@@ -22,10 +20,16 @@ echo "Changing to the $dir directory"
 cd $dir
 echo "...done"
 
+for file in "$HOME/.bash_profile" "$HOME/.bashrc"; do
+	if [ -f $file ] && ! grep ${files[0]} $file; then
+		echo "source .${files[0]}" >> $file
+	fi
+done
+
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
-for file in $files; do
-    echo "Moving any existing dotfiles from ~ to $olddir"
-    mv ~/.$file ~/dotfiles_old/
-    echo "Creating symlink to $file in home directory."
-    ln -s $dir/$file ~/.$file
+for file in "${files[@]}"; do
+  echo "Moving any existing dotfiles from ~ to $olddir"
+  mv ~/.$file ~/dotfiles_old/
+  echo "Creating symlink to $file in home directory."
+  ln -s $dir/$file ~/.$file
 done
