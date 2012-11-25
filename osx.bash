@@ -14,6 +14,7 @@ fi
 # sets up proper alias commands when called
 alias ls='ls -G'
 alias ll='ls -hl -la'
+
 alias fdns='sudo killall -HUP mDNSResponder'
 
 # add keys to agent by default

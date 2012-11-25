@@ -31,3 +31,8 @@ for file in '.bash_profile' '.bashrc'; do
 		source $file
 	fi
 done
+
+email='frankieteardrop%gmail.com'
+# one time configs
+git config --global user.name "Lihan Li"
+git config --global user.email ${email//%/@}
