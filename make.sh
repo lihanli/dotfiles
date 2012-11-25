@@ -32,7 +32,7 @@ for file in '.bash_profile' '.bashrc'; do
 	fi
 done
 
-email='frankieteardrop%gmail.com'
 # one time configs
+email='frankieteardrop%gmail.com'
 git config --global user.name "Lihan Li"
-git config --global user.email ${email//%/@}
+git config --global user.email ${email/\%/@}
