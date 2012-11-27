@@ -11,7 +11,8 @@ files=(common_profile.bash vimrc osx.bash)
 ##########
 
 # create dotfiles_old in homedir
-mkdir -p $olddir
+[ -d $olddir ] && rm -rf $olddir
+mkdir $olddir
 
 # change to the dotfiles directory
 cd $dir
