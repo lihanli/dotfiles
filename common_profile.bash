@@ -1,15 +1,16 @@
-GC="$HOME/git-completion.bash"
+path_append ()  { path_remove $1; export PATH="$PATH:$1"; }
+path_prepend () { path_remove $1; export PATH="$1:$PATH"; }
+path_remove ()  { export PATH=`echo -n $PATH | awk -v RS=: -v ORS=: '$0 != "'$1'"' | sed 's/:$//'`; }
 
-[ -f $GC ] && source $GC
-
-# if rbenv installed
-if [ -d "$HOME/.rbenv" ]; then
-	export PATH=$PATH:$HOME/.rbenv/bin
+# init rbenv if installed
+rbenv_dir="$HOME/.rbenv"
+if [ -d $rbenv_dir ]; then
+	path_append $rbenv_dir/bin
 	eval "$(rbenv init -)"
 fi
 
-for path in '/node_modules/.bin' '/scripts' '/dotfiles/scripts'; do
-	export PATH=$PATH:$HOME$path
+for path in 'node_modules/.bin' 'scripts' 'dotfiles/scripts'; do
+	path_append $HOME/$path
 done
 
 # git aliases

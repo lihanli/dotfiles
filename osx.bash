@@ -1,4 +1,10 @@
-export PATH=$PATH:/usr/local/mysql/bin
+path_append '/usr/local/mysql/bin'
+
+# don't use apple's version of git
+git_dir='/usr/local/git'
+path_prepend $git_dir/bin
+source $git_dir/contrib/completion/git-completion.bash
+
 alias gd='git diff | subl -n'
 alias gdc='ga .; git diff --cached | subl -n'
 
