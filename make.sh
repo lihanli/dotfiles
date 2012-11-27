@@ -19,7 +19,7 @@ cd $dir
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in "${files[@]}"; do
-  mv ~/.$file ~/dotfiles_old/
+  mv ~/.$file $olddir
   ln -s $dir/$file ~/.$file
 done
 echo 'symlinks done'
