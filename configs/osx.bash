@@ -24,4 +24,4 @@ alias ll='ls -hl -la'
 alias fdns='sudo killall -HUP mDNSResponder'
 
 # add keys to agent by default
-ssh-add
+ssh-add > /dev/null 2>&1

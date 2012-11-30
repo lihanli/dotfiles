@@ -51,4 +51,4 @@ if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
 fi
 PS1=${PS1_PREFIX}'\[$(tput setaf 6)\]\w$(parse_git_branch)> \[$(tput sgr0)\]'
 
-[[ $OSTYPE =~ ^darwin.*$ ]] && source .osx.bash
+[[ $OSTYPE =~ ^darwin.*$ ]] && source ~/.osx.bash

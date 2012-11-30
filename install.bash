@@ -15,13 +15,12 @@ for file in "${files[@]}"; do
   mv ~/.$file $olddir
   ln -s $dir/$file ~/.$file
 done
-echo 'symlinks done'
 
-cd
 # add common profile to bash profile or bashrc then source it
 for file in '.bash_profile' '.bashrc'; do
+	file=~/$file
 	if [ -f $file ]; then
-		[[ -z  $(grep ${files[0]} $file) ]] && echo "source .${files[0]}" >> $file
+		[[ -z  $(grep ${files[0]} $file) ]] && echo "source ~/.${files[0]}" >> $file
 		source $file
 	fi
 done
@@ -35,3 +34,4 @@ git config --global core.excludesfile $dir/gitignore_global
 if [[ $OSTYPE =~ ^darwin.*$ ]]; then
 	git config --global core.editor 'subl -n -w'
 fi
+echo 'install complete'
