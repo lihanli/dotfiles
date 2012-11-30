@@ -1,21 +1,17 @@
 #!/bin/bash
 ############################
-# .make.sh
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 ############################
 
 ########## Variables
-dir=~/dotfiles                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
+dir="`pwd`/configs"   # config files directory
+olddir=~/dotfiles_old # old dotfiles backup directory
 files=(common_profile.bash vimrc osx.bash)
 ##########
 
 # create dotfiles_old in homedir
 [ -d $olddir ] && rm -rf $olddir
 mkdir $olddir
-
-# change to the dotfiles directory
-cd $dir
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in "${files[@]}"; do
@@ -24,7 +20,7 @@ for file in "${files[@]}"; do
 done
 echo 'symlinks done'
 
-cd $HOME
+cd
 # add common profile to bash profile or bashrc then source it
 for file in '.bash_profile' '.bashrc'; do
 	if [ -f $file ]; then
@@ -33,7 +29,14 @@ for file in '.bash_profile' '.bashrc'; do
 	fi
 done
 
+# change to install directory
+cd $dir
+cd ..
+
 # one time configs
 email='frankieteardrop%gmail.com'
 git config --global user.name "Lihan Li"
 git config --global user.email ${email/\%/@}
+git config --global core.excludesfile $dir/gitignore_global
+
+[[ $OSTYPE =~ ^darwin.*$ ]] && ./osx_install.bash
