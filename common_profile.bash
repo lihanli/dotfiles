@@ -13,6 +13,9 @@ for path in 'node_modules/.bin' 'scripts' 'dotfiles/scripts'; do
 	path_append $HOME/$path
 done
 
+# general aliases
+alias lsg='ll | grep'
+
 # git aliases
 alias g='git status'
 alias ga='git add'
@@ -32,12 +35,12 @@ for cmd in "gout gin gco hdep"; do
 	complete -o bashdefault -o default -o nospace -F _gitk $cmd
 done
 
-alias drb='rspec --drb --fail-fast -f d'
-alias migrate='rake db:migrate && rake db:test:prepare'
+# ruby aliases
 alias be='bundle exec'
+alias drb='be rspec --drb --fail-fast -f d'
+alias migrate='be rake db:migrate && be rake db:test:prepare'
 alias ispec='be rspec --fail-fast -f d'
-alias tu='ruby -Itest'
-alias lsg='ll | grep'
+alias tu='be ruby -Itest'
 
 parse_git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
