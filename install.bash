@@ -36,4 +36,6 @@ git config --global user.name "Lihan Li"
 git config --global user.email ${email/\%/@}
 git config --global core.excludesfile $dir/gitignore_global
 
-[[ $OSTYPE =~ ^darwin.*$ ]] && ./osx_install.bash
+if [[ $OSTYPE =~ ^darwin.*$ ]]; then
+	git config --global core.editor "subl -n -w"
+fi
