@@ -1,13 +1,10 @@
 #!/bin/bash
-############################
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
-############################
 
-########## Variables
-dir="`pwd`/configs"   # config files directory
-olddir=~/dotfiles_old # old dotfiles backup directory
+# config files directory
+dir="`pwd`/configs"
+# old dotfiles backup directory
+olddir=~/dotfiles_old
 files=(common_profile.bash vimrc osx.bash)
-##########
 
 # create dotfiles_old in homedir
 [ -d $olddir ] && rm -rf $olddir
