@@ -41,6 +41,7 @@ alias drb='be rspec --drb --fail-fast -f d'
 alias migrate='be rake db:migrate && be rake db:test:prepare'
 alias ispec='be rspec --fail-fast -f d'
 alias tu='be ruby -Itest'
+alias ir='be rails s thin'
 
 parse_git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
@@ -51,4 +52,8 @@ if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
 fi
 PS1=${PS1_PREFIX}'\[$(tput setaf 6)\]\w$(parse_git_branch)> \[$(tput sgr0)\]'
 
-[[ $OSTYPE =~ ^darwin.*$ ]] && source ~/.osx.bash
+if [[ $OSTYPE =~ ^darwin.*$ ]]; then
+	source ~/.osx.bash
+else
+	alias upgrade='sudo apt-get update && sudo apt-get upgrade'
+fi
