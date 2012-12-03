@@ -1,2 +1,3 @@
 #!/usr/bin/env ruby
+# npm exec
 system "#{Dir.pwd}/node_modules/.bin/#{ARGV.join ' '}"

@@ -1,2 +1,3 @@
 #!/bin/bash
+# search for a process by name
 ps auxww | grep $1 | grep -v `basename $0` | grep -v grep
