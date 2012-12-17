@@ -1,0 +1,3 @@
+#!/bin/bash
+# bz2 compress
+tar cvfj ${1//\//}.tar.bz2 $1
