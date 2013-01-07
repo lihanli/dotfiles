@@ -26,8 +26,8 @@ alias lsg='ll | grep'
 # git aliases
 alias g='git status'
 alias ga='git add'
-alias gd="git diff | $EDITOR"
-alias gdc="ga .; git diff --cached | $EDITOR"
+alias gd="git diff | $EDITOR -"
+alias gdc="ga .; git diff --cached | $EDITOR -"
 alias gk='git commit -m'
 alias gsha='git rev-parse HEAD'
 alias gfo='git fetch origin'
