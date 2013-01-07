@@ -5,9 +5,6 @@ git_dir='/usr/local/git'
 path_prepend $git_dir/bin
 source $git_dir/contrib/completion/git-completion.bash
 
-alias gd='git diff | subl -n'
-alias gdc='ga .; git diff --cached | subl -n'
-
 # enable colors
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
@@ -22,6 +19,8 @@ alias ls='ls -G'
 alias ll='ls -hl -la'
 
 alias fdns='sudo killall -HUP mDNSResponder'
+
+export EDITOR='subl -w -n'
 
 # add keys to agent by default
 ssh-add > /dev/null 2>&1

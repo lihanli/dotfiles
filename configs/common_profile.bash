@@ -13,18 +13,25 @@ for path in 'node_modules/.bin' 'scripts' 'dotfiles/scripts'; do
 	path_append $HOME/$path
 done
 
+if [[ $OSTYPE =~ ^darwin.*$ ]]; then
+	source ~/.osx.bash
+else
+	alias upgrade='sudo apt-get update && sudo apt-get upgrade'
+	export EDITOR='vi'
+fi
+
 # general aliases
 alias lsg='ll | grep'
 
 # git aliases
 alias g='git status'
 alias ga='git add'
-alias gd='git diff'
+alias gd="git diff | $EDITOR"
+alias gdc="ga .; git diff --cached | $EDITOR"
 alias gk='git commit -m'
 alias gsha='git rev-parse HEAD'
 alias gfo='git fetch origin'
 alias grhh='git reset --hard HEAD'
-alias gdc='git diff --cached'
 
 alias gout='git push origin'
 alias gin='git pull origin'
@@ -53,9 +60,3 @@ if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
 	PS1_PREFIX='\[$(tput setaf 2)\]\u\[$(tput sgr0)\]:'
 fi
 PS1=${PS1_PREFIX}'\[$(tput setaf 6)\]\w$(parse_git_branch)> \[$(tput sgr0)\]'
-
-if [[ $OSTYPE =~ ^darwin.*$ ]]; then
-	source ~/.osx.bash
-else
-	alias upgrade='sudo apt-get update && sudo apt-get upgrade'
-fi
