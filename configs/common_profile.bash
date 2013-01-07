@@ -31,6 +31,8 @@ alias gin='git pull origin'
 alias gco='git checkout'
 alias hdep='git push heroku'
 
+alias dep='gout master && hdep master'
+
 for cmd in "gout gin gco hdep"; do
 	complete -o bashdefault -o default -o nospace -F _gitk $cmd
 done
