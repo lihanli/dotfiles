@@ -32,6 +32,7 @@ alias gk='git commit -m'
 alias gsha='git rev-parse HEAD'
 alias gfo='git fetch origin'
 alias grhh='git reset --hard HEAD'
+alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 alias gout='git push origin'
 alias gin='git pull origin'
