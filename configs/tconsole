@@ -1,0 +1,3 @@
+TConsole::Config.run do |config|
+  config.fail_fast = true
+end
