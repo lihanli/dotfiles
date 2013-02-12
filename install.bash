@@ -31,6 +31,7 @@ email='frankieteardrop%gmail.com'
 git config --global user.name 'Lihan Li'
 git config --global user.email ${email/\%/@}
 git config --global core.excludesfile $dir/gitignore_global
+git config --global core.autocrlf input
 
 if [[ $OSTYPE =~ ^darwin.*$ ]]; then
 	git config --global core.editor 'subl -n -w'
