@@ -2,3 +2,4 @@
 chromedriver.log
 node_modules
 .sass-cache
+.vagrant
