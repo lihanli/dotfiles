@@ -400,7 +400,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>269 116 924 485 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1661 14 1649 843 -1920 0 1920 1080 </string>
+	<string>-1656 31 1649 843 -1920 0 1920 1080 </string>
 	<key>NeverWarnAboutShortLivedSessions_D76C2E58-F54E-4031-BC10-A977BB46F29B</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -2008,9 +2008,9 @@
 				<key>Window Type</key>
 				<integer>0</integer>
 				<key>X Origin</key>
-				<real>-1661</real>
+				<real>-1656</real>
 				<key>Y Origin</key>
-				<real>14</real>
+				<real>31</real>
 			</dict>
 		</array>
 	</dict>

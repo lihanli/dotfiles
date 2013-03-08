@@ -9,6 +9,8 @@ if [ -d $rbenv_dir ]; then
 	eval "$(rbenv init -)"
 fi
 
+path_prepend /usr/local/bin
+
 for path in 'node_modules/.bin' 'scripts' 'dotfiles/scripts'; do
 	path_append $HOME/$path
 done
