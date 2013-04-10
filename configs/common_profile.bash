@@ -18,7 +18,12 @@ done
 if [[ $OSTYPE =~ ^darwin.*$ ]]; then
 	source ~/.osx.bash
 else
-	alias upgrade='sudo apt-get update && sudo apt-get upgrade'
+  if [[ $OSTYPE = 'cygwin' ]]; then
+		alias ls='ls -G --color=auto'
+		alias ll='ls -hl -la --color=auto'
+  else
+		alias upgrade='sudo apt-get update && sudo apt-get upgrade'
+  fi
 	export EDITOR='vi'
 fi
 
