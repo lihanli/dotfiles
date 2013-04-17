@@ -5,7 +5,7 @@ dir="`pwd`/configs"
 # old dotfiles backup directory
 olddir=~/dotfiles_old
 # common_profile.bash needs to always be first because it's referenced later
-files=(common_profile.bash vimrc osx.bash tconsole gemrc)
+files=(common_profile.bash vimrc osx.bash tconsole gemrc inputrc)
 
 # create dotfiles_old in homedir
 [ -d $olddir ] && rm -rf $olddir
@@ -24,7 +24,7 @@ ln -s $dir/ssh/config ~/.ssh/config
 for file in '.bash_profile' '.bashrc'; do
 	file=~/$file
 	if [ -f $file ]; then
-		[[ -z  $(grep ${files[0]} $file) ]] && echo "source ~/.${files[0]}" >> $file
+		[[ -z $(grep ${files[0]} $file) ]] && echo "source ~/.${files[0]}" >> $file
 		source $file
 	fi
 done
