@@ -42,15 +42,17 @@ alias grhh='git reset --hard HEAD'
 alias gl="git log --pretty=format:'%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gs="git stash"
 alias gsp="git stash pop"
+alias gmo='git checkout --ours --'
 
 alias gout='git push origin'
 alias gin='git pull origin'
 alias gco='git checkout'
 alias hdep='git push heroku'
+alias gbd='git branch -D'
 
 alias dep='gout master && hdep master'
 
-for cmd in "gout gin gco hdep"; do
+for cmd in "gout gin gco hdep gbd"; do
 	complete -o bashdefault -o default -o nospace -F _gitk $cmd
 done
 
