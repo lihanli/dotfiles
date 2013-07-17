@@ -17,9 +17,6 @@ for file in "${files[@]}"; do
   ln -s $dir/$file ~/.$file
 done
 
-mv ~/.ssh/config $olddir
-ln -s $dir/ssh/config ~/.ssh/config
-
 # add common profile to bash profile or bashrc then source it
 for file in '.bash_profile' '.bashrc'; do
 	file=~/$file
