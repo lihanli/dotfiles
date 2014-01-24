@@ -1,5 +1,6 @@
 path_append '/usr/local/mysql/bin'
 path_append '/Applications/Postgres.app/Contents/MacOS/bin'
+path_append '/Applications/Postgres93.app/Contents/MacOS/bin'
 
 # don't use apple's version of git
 git_dir='/usr/local/git'
