@@ -59,7 +59,8 @@ done
 # ruby aliases
 alias be='bundle exec'
 alias drb='be rspec --drb --fail-fast -f d'
-alias migrate='be rake db:migrate && be rake db:test:prepare'
+alias tpre='be rake db:test:prepare'
+alias migrate='be rake db:migrate && tpre'
 alias ispec='be rspec --fail-fast -f d'
 alias tu='be ruby -Itest'
 alias ir='be rails s thin'
