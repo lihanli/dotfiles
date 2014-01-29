@@ -129,3 +129,6 @@ hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 # add dotfiles scripts dir to fastscripts
 defaults write com.red-sweater.FastScripts ScriptTreePathsKey '("FSSP%%%$HOME$/dotfiles/scripts/apple", "/Library/Scripts")'
+
+# disable mouse acceleration
+defaults write NSGlobalDomain com.apple.mouse.scaling -1
