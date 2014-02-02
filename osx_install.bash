@@ -132,3 +132,6 @@ defaults write com.red-sweater.FastScripts ScriptTreePathsKey '("FSSP%%%$HOME$/d
 
 # disable mouse acceleration
 defaults write NSGlobalDomain com.apple.mouse.scaling -1
+
+# minimize using scale effect
+defaults write com.apple.dock mineffect -string scale
