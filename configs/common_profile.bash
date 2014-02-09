@@ -5,26 +5,26 @@ path_remove ()  { export PATH=`echo -n $PATH | awk -v RS=: -v ORS=: '$0 != "'$1'
 # init rbenv if installed
 rbenv_dir="$HOME/.rbenv"
 if [ -d $rbenv_dir ]; then
-	path_append $rbenv_dir/bin
-	eval "$(rbenv init -)"
+  path_append $rbenv_dir/bin
+  eval "$(rbenv init -)"
 fi
 
 path_prepend /usr/local/bin
 
 for path in 'node_modules/.bin' 'scripts' 'dotfiles/scripts'; do
-	path_append $HOME/$path
+  path_append $HOME/$path
 done
 
 if [[ $OSTYPE =~ ^darwin.*$ ]]; then
-	source ~/.osx.bash
+  source ~/.osx.bash
 else
   if [[ $OSTYPE = 'cygwin' ]]; then
-		alias ls='ls -G --color=auto'
-		alias ll='ls -hl -la --color=auto'
+    alias ls='ls -G --color=auto'
+    alias ll='ls -hl -la --color=auto'
   else
-		alias upgrade='sudo apt-get update && sudo apt-get upgrade'
+    alias upgrade='sudo apt-get update && sudo apt-get upgrade'
   fi
-	export EDITOR='vi'
+  export EDITOR='vi'
 fi
 
 # general aliases
@@ -53,7 +53,7 @@ alias hdep='git push heroku'
 alias gbd='git branch -D'
 
 for cmd in "gout gin gco hdep gbd"; do
-	complete -o bashdefault -o default -o nospace -F _gitk $cmd
+  complete -o bashdefault -o default -o nospace -F _gitk $cmd
 done
 
 # ruby aliases
@@ -66,10 +66,10 @@ alias tu='be ruby -Itest'
 alias ir='be rails s thin'
 
 parse_git_branch() {
-	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-	PS1_PREFIX='\[$(tput setaf 2)\]\u\[$(tput sgr0)\]:'
+  PS1_PREFIX='\[$(tput setaf 2)\]\u\[$(tput sgr0)\]:'
 fi
 PS1=${PS1_PREFIX}'\[$(tput setaf 6)\]\w$(parse_git_branch)> \[$(tput sgr0)\]'
