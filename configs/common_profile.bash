@@ -29,6 +29,7 @@ fi
 
 # general aliases
 alias lsg='ll | grep'
+alias encrypt='gpg --cipher-algo AES256 -c'
 
 # git aliases
 alias g='git status'
