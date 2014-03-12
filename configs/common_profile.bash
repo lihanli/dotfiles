@@ -48,7 +48,7 @@ alias gpu='git pull upstream master'
 alias dep='gout master && hdep master'
 
 alias gout='git push origin'
-alias gin='git pull origin'
+alias gin='git pull --rebase origin'
 alias gco='git checkout'
 alias hdep='git push heroku'
 alias gbd='git branch -D'
