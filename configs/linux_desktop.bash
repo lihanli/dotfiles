@@ -5,7 +5,11 @@ function pipe_into_editor()
   tmp_file="$HOME/tmp.txt"
   $@ > $tmp_file
   $EDITOR $tmp_file
-  rm $tmp_file
+}
+
+function subl()
+{
+  '/opt/Sublime Text 2/sublime_text' $@ &
 }
 
 alias gd="pipe_into_editor git diff"
