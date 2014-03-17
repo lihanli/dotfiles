@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # config files directory
-dir="`pwd`/configs"
+configs_dir="`pwd`/configs"
 # old dotfiles backup directory
 olddir=~/dotfiles_old
 # common_profile.bash needs to always be first because it's referenced later
@@ -14,7 +14,7 @@ mkdir $olddir
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in "${files[@]}"; do
   mv ~/.$file $olddir
-  ln -s $dir/$file ~/.$file
+  ln -s $configs_dir/$file ~/.$file
 done
 
 # add common profile to bash profile or bashrc then source it
@@ -30,7 +30,7 @@ done
 email='frankieteardrop%gmail.com'
 git config --global user.name 'Lihan Li'
 git config --global user.email ${email/\%/@}
-git config --global core.excludesfile $dir/gitignore_global
+git config --global core.excludesfile $configs_dir/gitignore_global
 git config --global core.autocrlf input
 
 [[ $OSTYPE =~ ^darwin.*$ ]] && source osx_install.bash
