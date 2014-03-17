@@ -30,8 +30,6 @@ alias encrypt='gpg --cipher-algo AES256 -c'
 # git aliases
 alias g='git status'
 alias ga='git add'
-alias gd="git diff | $EDITOR -"
-alias gdc="ga .; git diff --cached | $EDITOR -"
 alias gk='git commit -m'
 alias gsha='git rev-parse HEAD'
 alias gfo='git fetch origin'
@@ -67,9 +65,14 @@ export DOTFILES_CONFIGS_DIR=$dotfiles_dir/configs
 
 os=`os_detect`
 case $os in
-  osx) source $DOTFILES_CONFIGS_DIR/osx.bash;;
-  ubuntu-desktop) source $DOTFILES_CONFIGS_DIR/linux_desktop.bash;;
-  ubuntu-server) export EDITOR='vi';;
+  osx)
+    source $DOTFILES_CONFIGS_DIR/osx.bash
+    source $DOTFILES_CONFIGS_DIR/git_diff_pipes.bash;;
+  ubuntu-desktop)
+    source $DOTFILES_CONFIGS_DIR/linux_desktop.bash;;
+  ubuntu-server)
+    export EDITOR='vi'
+    source $DOTFILES_CONFIGS_DIR/git_diff_pipes.bash;;
 esac
 [[ $os =~ ^ubuntu.*$ ]] && alias upgrade='sudo apt-get update && sudo apt-get upgrade'
 
