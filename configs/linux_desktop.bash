@@ -7,7 +7,7 @@ function pipe_into_editor() {
 }
 
 function subl() {
-  '/opt/Sublime Text 2/sublime_text' $@ &
+  nohup '/opt/Sublime Text 2/sublime_text' $@ > /dev/null 2>&1 &
 }
 
 alias gd="pipe_into_editor git diff"
