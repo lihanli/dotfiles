@@ -2,6 +2,9 @@ path_append ()  { path_remove $1; export PATH="$PATH:$1"; }
 path_prepend () { path_remove $1; export PATH="$1:$PATH"; }
 path_remove ()  { export PATH=`echo -n $PATH | awk -v RS=: -v ORS=: '$0 != "'$1'"' | sed 's/:$//'`; }
 
+dotfiles_dir=~/dotfiles
+source $dotfiles_dir/functions/util.bash
+
 # init rbenv if installed
 rbenv_dir="$HOME/.rbenv"
 if [ -d $rbenv_dir ]; then
@@ -60,21 +63,15 @@ alias tu='be ruby -Itest'
 alias ir='be rails s thin'
 
 # os specific config
-export DOTFILES_CONFIGS_DIR=~/dotfiles/configs
+export DOTFILES_CONFIGS_DIR=$dotfiles_dir/configs
 
-if [[ $OSTYPE =~ ^darwin.*$ ]]; then
-  source $DOTFILES_CONFIGS_DIR/osx.bash
-else
-  # linux
-  alias upgrade='sudo apt-get update && sudo apt-get upgrade'
-
-  dpkg -l ubuntu-desktop > /dev/null 2>&1
-  if [[ $? == 0 ]]; then
-    source $DOTFILES_CONFIGS_DIR/linux_desktop.bash
-  else
-    export EDITOR='vi'
-  fi
-fi
+os=`os_detect`
+case $os in
+  osx) source $DOTFILES_CONFIGS_DIR/osx.bash;;
+  ubuntu-desktop) source $DOTFILES_CONFIGS_DIR/linux_desktop.bash;;
+  ubuntu-server) export EDITOR='vi';;
+esac
+[[ $os =~ ^ubuntu.*$ ]] && alias upgrade='sudo apt-get update && sudo apt-get upgrade'
 
 # ps1 prefix
 parse_git_branch() {
