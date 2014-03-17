@@ -1,3 +1,5 @@
+source $dotfiles_install_dir/subl.bash
+
 git config --global core.editor 'subl -n -w'
 # Disable opening and closing window animations
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false

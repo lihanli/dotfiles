@@ -1,7 +1,9 @@
 #!/bin/bash
 
+dotfiles_dir=~/dotfiles
+source $dotfiles_dir/functions/util.bash
 # config files directory
-configs_dir="`pwd`/configs"
+configs_dir=$dotfiles_dir/configs
 # old dotfiles backup directory
 olddir=~/dotfiles_old
 # common_profile.bash needs to always be first because it's referenced later
@@ -33,6 +35,10 @@ git config --global user.email ${email/\%/@}
 git config --global core.excludesfile $configs_dir/gitignore_global
 git config --global core.autocrlf input
 
-[[ $OSTYPE =~ ^darwin.*$ ]] && source osx_install.bash
+dotfiles_install_dir=$dotfiles_dir/install
+case `os_detect` in
+  osx) source $dotfiles_install_dir/osx.bash;;
+  ubuntu-desktop) source $dotfiles_install_dir/linux_desktop.bash;;
+esac
 
 echo 'install complete'

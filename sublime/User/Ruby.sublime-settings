@@ -1,0 +1,15 @@
+{
+	"extensions":
+	[
+		"Gemfile",
+		"Gemfile.lock",
+		"rb.example",
+		"tconsole",
+		"Vagrantfile",
+		"jsfile",
+		".tconsole",
+		"god"
+	],
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true
+}

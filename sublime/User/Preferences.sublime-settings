@@ -1,0 +1,38 @@
+{
+	"auto_complete_commit_on_tab": false,
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/User/color_schemes/Sunburst.tmTheme",
+	"detect_indentation": false,
+	"dictionary": "Packages/Language - English/en_US.dic",
+	"drag_text": false,
+	"file_exclude_patterns":
+	[
+		"*.log",
+		".DS_Store"
+	],
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		".sass-cache",
+		"tmp",
+		"bower_components",
+		"node_modules"
+	],
+	"font_face": "Droid Sans Mono",
+	"font_size": 11.0,
+	"highlight_line": true,
+	"hot_exit": false,
+	"ignored_packages":
+	[
+	],
+	"remember_open_files": false,
+	"scroll_past_end": true,
+	"tab_size": 2,
+	"terminal": "iTerm.sh",
+	"theme": "Soda Dark.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"word_wrap": true
+}

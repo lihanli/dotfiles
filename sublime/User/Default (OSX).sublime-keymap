@@ -1,0 +1,8 @@
+[
+	{ "keys": ["ctrl+pageup"], "command": "prev_view" },
+	{ "keys": ["ctrl+pagedown"], "command": "next_view" },
+  { "keys": ["super+shift+m"], "command": "alignment" },
+  { "keys": ["ctrl+shift+'"], "command": "change_quotes" },
+  { "keys": ["super+shift+k"], "command": "open_terminal" },
+	{ "keys": ["super+shift+t"], "command": "delete_trailing_spaces" }
+]
