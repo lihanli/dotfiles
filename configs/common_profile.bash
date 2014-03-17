@@ -60,15 +60,17 @@ alias tu='be ruby -Itest'
 alias ir='be rails s thin'
 
 # os specific config
+export DOTFILES_CONFIGS_DIR=~/dotfiles/configs
+
 if [[ $OSTYPE =~ ^darwin.*$ ]]; then
-  source ~/.osx.bash
+  source $DOTFILES_CONFIGS_DIR/osx.bash
 else
   # linux
   alias upgrade='sudo apt-get update && sudo apt-get upgrade'
 
   dpkg -l ubuntu-desktop > /dev/null 2>&1
   if [[ $? == 0 ]]; then
-    source ~/.linux_desktop.bash
+    source $DOTFILES_CONFIGS_DIR/linux_desktop.bash
   else
     export EDITOR='vi'
   fi

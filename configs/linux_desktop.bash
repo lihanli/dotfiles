@@ -1,14 +1,12 @@
-source ~/.unix_gui.bash
+source $DOTFILES_CONFIGS_DIR/unix_gui.bash
 
-function pipe_into_editor()
-{
+function pipe_into_editor() {
   tmp_file="$HOME/tmp.txt"
   $@ > $tmp_file
   $EDITOR $tmp_file
 }
 
-function subl()
-{
+function subl() {
   '/opt/Sublime Text 2/sublime_text' $@ &
 }
 

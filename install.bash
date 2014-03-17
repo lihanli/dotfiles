@@ -5,7 +5,7 @@ dir="`pwd`/configs"
 # old dotfiles backup directory
 olddir=~/dotfiles_old
 # common_profile.bash needs to always be first because it's referenced later
-files=(common_profile.bash linux_desktop.bash vimrc osx.bash gemrc inputrc unix_gui.bash)
+files=(common_profile.bash vimrc gemrc inputrc)
 
 # create dotfiles_old in homedir
 [ -d $olddir ] && rm -rf $olddir

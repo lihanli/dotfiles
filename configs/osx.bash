@@ -1,4 +1,5 @@
-source ~/.unix_gui.bash
+source $DOTFILES_CONFIGS_DIR/unix_gui.bash
+
 path_append '/usr/local/mysql/bin'
 path_append '/Applications/Postgres.app/Contents/MacOS/bin'
 path_append '/Applications/Postgres93.app/Contents/MacOS/bin'
