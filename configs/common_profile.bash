@@ -15,18 +15,6 @@ for path in 'node_modules/.bin' 'scripts' 'dotfiles/scripts'; do
   path_append $HOME/$path
 done
 
-if [[ $OSTYPE =~ ^darwin.*$ ]]; then
-  source ~/.osx.bash
-else
-  if [[ $OSTYPE = 'cygwin' ]]; then
-    alias ls='ls -G --color=auto'
-    alias ll='ls -hl -la --color=auto'
-  else
-    alias upgrade='sudo apt-get update && sudo apt-get upgrade'
-  fi
-  export EDITOR='vi'
-fi
-
 # add git bash completion
 if [ -d '/usr/share/bash-completion' ]; then
   source /usr/share/bash-completion/completions/git
@@ -71,6 +59,22 @@ alias ispec='be rspec --fail-fast -f d'
 alias tu='be ruby -Itest'
 alias ir='be rails s thin'
 
+# os specific config
+if [[ $OSTYPE =~ ^darwin.*$ ]]; then
+  source ~/.osx.bash
+else
+  # linux
+  alias upgrade='sudo apt-get update && sudo apt-get upgrade'
+
+  dpkg -l ubuntu-desktop > /dev/null 2>&1
+  if [[ $? == 0 ]]; then
+    source ~/.linux_desktop.bash
+  else
+    export EDITOR='vi'
+  fi
+fi
+
+# ps1 prefix
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
