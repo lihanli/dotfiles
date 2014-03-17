@@ -9,6 +9,6 @@ user_dir=$sublime_dir/Packages/User
 [[ ! -e $user_dir ]] && return
 # symlink user directory
 if [[ ! -L $user_dir ]]; then
-  mv $user_dir $sublime_dir/Packages/User_old
-  ln -s $dotfiles_dir/sublime/User $user_dir
+  mv "$user_dir" "$sublime_dir/Packages/User_old"
+  ln -s "$dotfiles_dir/sublime/User" "$user_dir"
 fi
