@@ -27,6 +27,11 @@ else
   export EDITOR='vi'
 fi
 
+# add git bash completion
+if [ -d '/usr/share/bash-completion' ]; then
+  source /usr/share/bash-completion/completions/git
+fi
+
 # general aliases
 alias lsg='ll | grep'
 alias encrypt='gpg --cipher-algo AES256 -c'
