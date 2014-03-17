@@ -4,10 +4,13 @@ path_append '/usr/local/mysql/bin'
 path_append '/Applications/Postgres.app/Contents/MacOS/bin'
 path_append '/Applications/Postgres93.app/Contents/MacOS/bin'
 
-# don't use apple's version of git
+# use brew git if installed
 git_dir='/usr/local/git'
-path_prepend $git_dir/bin
-source $git_dir/contrib/completion/git-completion.bash
+
+if [ -d $git_dir ]; then
+  path_prepend $git_dir/bin
+  source $git_dir/contrib/completion/git-completion.bash
+fi
 
 # enable colors
 export CLICOLOR=1
