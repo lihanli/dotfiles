@@ -1,0 +1,16 @@
+{
+  "syntaxmgr_settings": [
+    {
+      "platforms": ["linux"],
+      "settings": {
+        "font_size": 11
+      }
+    },
+    {
+      "platforms": ["osx"],
+      "settings": {
+        "font_size": 14
+      }
+    }
+  ]
+}
