@@ -18,11 +18,6 @@ for path in 'node_modules/.bin' 'scripts' 'dotfiles/scripts'; do
   path_append $HOME/$path
 done
 
-# add git bash completion
-if [ -d '/usr/share/bash-completion' ]; then
-  source /usr/share/bash-completion/completions/git
-fi
-
 # general aliases
 alias ll='ls -alF'
 alias lsg='ll | grep'
