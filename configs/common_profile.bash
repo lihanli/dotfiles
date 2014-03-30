@@ -24,6 +24,7 @@ if [ -d '/usr/share/bash-completion' ]; then
 fi
 
 # general aliases
+alias ll='ls -alF'
 alias lsg='ll | grep'
 alias encrypt='gpg --cipher-algo AES256 -c'
 
