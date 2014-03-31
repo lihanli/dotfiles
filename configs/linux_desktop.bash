@@ -6,9 +6,5 @@ function pipe_into_editor() {
   $EDITOR $tmp_file
 }
 
-function subl() {
-  nohup '/opt/Sublime Text 2/sublime_text' $@ > /dev/null 2>&1 &
-}
-
 alias gd="pipe_into_editor git diff"
 alias gdc="ga --all .; pipe_into_editor git diff --cached"
