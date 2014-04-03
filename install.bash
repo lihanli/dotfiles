@@ -7,7 +7,7 @@ configs_dir=$dotfiles_dir/configs
 # old dotfiles backup directory
 olddir=~/dotfiles_old
 # common_profile.bash needs to always be first because it's referenced later
-files=(common_profile.bash vimrc gemrc inputrc)
+files=(common_profile.bash vimrc gemrc inputrc tconsole)
 
 # create dotfiles_old in homedir
 [ -d $olddir ] && rm -rf $olddir

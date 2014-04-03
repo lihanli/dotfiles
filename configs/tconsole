@@ -1,0 +1,6 @@
+TConsole::Config.run do |config|
+  config.file_sets = {
+    "all" => ["test/**/*_test.rb"],
+    "units" => %w(helpers mailers models lib).map { |d| "test/#{d}/**/*_test.rb" },
+  }
+end
