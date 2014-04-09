@@ -1,16 +1,14 @@
 source $DOTFILES_CONFIGS_DIR/unix_gui.bash
 
+path_prepend '/usr/local/bin'
+
 path_append '/usr/local/mysql/bin'
 path_append '/Applications/Postgres.app/Contents/MacOS/bin'
 path_append '/Applications/Postgres93.app/Contents/MacOS/bin'
 
-# use brew git if installed
-git_dir='/usr/local/git'
-
-if [ -d $git_dir ]; then
-  path_prepend $git_dir/bin
-  source $git_dir/contrib/completion/git-completion.bash
-fi
+# git bash completion
+git_completion='/usr/local/git/contrib/completion/git-completion.bash'
+[[ -e $git_completion ]] && source $git_completion
 
 # enable colors
 export CLICOLOR=1
