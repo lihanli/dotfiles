@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+DROPBOX_DIR = "#{ENV['HOME']}/Dropbox"
+raise unless File.directory?(DROPBOX_DIR)
+
+FILENAME = "#{ENV['HOME']}/Dropbox-#{Time.now.to_i}.tar.bz2"
+
+system("tar cvfj #{FILENAME} #{DROPBOX_DIR} -P --exclude='#{DROPBOX_DIR}/.dropbox' --exclude='#{DROPBOX_DIR}/.dropbox.cache'")
+system("aws s3 mv --storage-class='REDUCED_REDUNDANCY' #{FILENAME} s3://lihan/backups/")
