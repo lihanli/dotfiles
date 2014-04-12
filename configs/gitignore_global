@@ -1,6 +1,6 @@
 .DS_Store
-chromedriver.log
 node_modules
 .sass-cache
 .vagrant
 .bundle
+*.log

@@ -1,30 +1,30 @@
 #!/bin/bash
-
 dotfiles_dir=~/dotfiles
 source $dotfiles_dir/functions/util.bash
 # config files directory
 configs_dir=$dotfiles_dir/configs
 # old dotfiles backup directory
 olddir=~/dotfiles_old
-# common_profile.bash needs to always be first because it's referenced later
-files=(common_profile.bash vimrc gemrc inputrc tconsole)
 
 # create dotfiles_old in homedir
 [ -d $olddir ] && rm -rf $olddir
 mkdir $olddir
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
-for file in "${files[@]}"; do
+for file in "$dotfiles_dir"/dotfiles/*; do
+  file=`basename "$file"`
+
   mv ~/.$file $olddir
-  ln -s $configs_dir/$file ~/.$file
+  ln -s "$dotfiles_dir"/dotfiles/$file ~/.$file
 done
 
 # add common profile to bash profile or bashrc then source it
 for file in '.bash_profile' '.bashrc'; do
   file=~/$file
+  common_profile_path="$configs_dir"/common_profile.bash
+
   if [ -f $file ]; then
-    [[ -z $(grep ${files[0]} $file) ]] && echo "source ~/.${files[0]}" >> $file
-    source $file
+    [[ -z $(grep $common_profile_path $file) ]] && echo "source $common_profile_path" >> $file
   fi
 done
 
