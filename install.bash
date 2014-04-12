@@ -1,9 +1,8 @@
 #!/bin/bash
 dotfiles_dir=~/dotfiles
 source $dotfiles_dir/functions/util.bash
-# config files directory
+
 configs_dir=$dotfiles_dir/configs
-# old dotfiles backup directory
 olddir=~/dotfiles_old
 
 # create dotfiles_old in homedir
