@@ -7,7 +7,7 @@ path_append '/Applications/Postgres.app/Contents/MacOS/bin'
 path_append '/Applications/Postgres93.app/Contents/MacOS/bin'
 
 # git bash completion
-git_completion='/usr/local/git/contrib/completion/git-completion.bash'
+git_completion='/usr/local/etc/bash_completion.d/git-completion.bash'
 [[ -e $git_completion ]] && source $git_completion
 
 # enable colors
