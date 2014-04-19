@@ -19,6 +19,8 @@ raise 'file not found' if filename.nil? || !File.exists?(filename)
 
 if options[:encrypt]
   system("gpg --cipher-algo AES256 -c #{filename}")
+  File.delete(filename) if options[:move]
+
   filename = "#{filename}.gpg"
 end
 
