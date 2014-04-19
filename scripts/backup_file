@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+require 'optparse'
+
+options = {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: backup_file [options] FILENAME"
+
+  opts.on("-e", "--encrypt", "encrypt file") do |opt|
+    options[:encrypt] = opt
+  end
+
+  opts.on("-m", "--move", "move file instead of copying") do |opt|
+    options[:move] = opt
+  end
+end.parse!
+
+filename = ARGV[0]
+raise 'file not found' if filename.nil? || !File.exists?(filename)
+
+if options[:encrypt]
+  system("gpg --cipher-algo AES256 -c #{filename}")
+  filename = "#{filename}.gpg"
+end
+
+basename = File.basename(filename)
+lambda do
+  insert_index = basename.index('.') || basename.size
+  basename.insert(insert_index, "_#{Time.now.to_i}")
+end.()
+
+system("aws s3 #{options[:move] || options[:encrypt] ? 'mv' : 'cp'} --storage-class='REDUCED_REDUNDANCY' #{filename} s3://lihan/backups/#{basename}")
