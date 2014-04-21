@@ -32,7 +32,7 @@ email='frankieteardrop%gmail.com'
 git config --global user.name 'Lihan Li'
 git config --global user.email ${email/\%/@}
 git config --global core.excludesfile $configs_dir/gitignore_global
-git config --global core.autocrlf true
+git config --global core.autocrlf input
 
 dotfiles_install_dir=$dotfiles_dir/install
 case `os_detect` in
