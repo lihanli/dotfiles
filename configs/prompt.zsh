@@ -1,3 +1,5 @@
+# parameter expansion, command substitution and arithmetic expansion are performed in prompts
+setopt prompt_subst
 # result of last command displays either happy or sad face as a prompt
 smiley="%(?,%{$fg[green]%}☺%{$reset_color%},%{$fg[red]%}☹%{$reset_color%})"
 
