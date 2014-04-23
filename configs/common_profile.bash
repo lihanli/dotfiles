@@ -1,6 +1,23 @@
-path_append ()  { path_remove $1; export PATH="$PATH:$1"; }
-path_prepend () { path_remove $1; export PATH="$1:$PATH"; }
-path_remove ()  { export PATH=`echo -n $PATH | awk -v RS=: -v ORS=: '$0 != "'$1'"' | sed 's/:$//'`; }
+function path_remove {
+  cleanpath=$(echo $PATH |
+              tr ':' '\n' |
+              awk '{a[$0]++;if (a[$0]==1){b[max+1]=$0;max++}}END{for (x = 1; x <= max; x++) { print b[x] } }' |
+              grep -v $1 |
+              tr '\n' ':' |
+              sed -e 's/:$//')
+
+  export PATH=$cleanpath
+}
+
+function path_append ()  {
+  path_remove $1
+  export PATH=$PATH:$1
+}
+
+function path_prepend {
+  path_remove $1
+  export PATH=$1:$PATH
+}
 
 dotfiles_dir=~/dotfiles
 source $dotfiles_dir/functions/util.bash
@@ -14,8 +31,8 @@ fi
 
 path_prepend /usr/local/bin
 
-for path in 'node_modules/.bin' 'scripts' 'dotfiles/scripts'; do
-  path_append $HOME/$path
+for new_path in 'node_modules/.bin' 'scripts' 'dotfiles/scripts'; do
+  path_append $HOME/$new_path
 done
 
 # general aliases
@@ -45,7 +62,7 @@ alias hdep='git push heroku'
 alias gbd='git branch -D'
 
 for cmd in "gout gin gco hdep gbd"; do
-  complete -o bashdefault -o default -o nospace -F _gitk $cmd
+  compdef $cmd=git
 done
 
 # ruby aliases
@@ -73,12 +90,11 @@ case $os in
 esac
 [[ $os =~ ^ubuntu.*$ ]] && alias upgrade='sudo apt-get update && sudo apt-get upgrade'
 
-# ps1 prefix
-parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
+# turn on vimode
+bindkey -v
+# reduce command mode timeout
+export KEYTIMEOUT=1
 
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-  PS1_PREFIX='\[$(tput setaf 2)\]\u\[$(tput sgr0)\]:'
-fi
-PS1=${PS1_PREFIX}'\[$(tput setaf 6)\]\w$(parse_git_branch)> \[$(tput sgr0)\]'
+source $DOTFILES_CONFIGS_DIR/prompt.zsh
+
+export PATH

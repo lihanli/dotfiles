@@ -1,4 +1,5 @@
 source $DOTFILES_CONFIGS_DIR/unix_gui.bash
+export EDITOR='subl -n -w'
 
 path_prepend '/usr/local/bin'
 
@@ -6,9 +7,7 @@ path_append '/usr/local/mysql/bin'
 path_append '/Applications/Postgres.app/Contents/MacOS/bin'
 path_append '/Applications/Postgres93.app/Contents/MacOS/bin'
 
-# git bash completion
-git_completion='/usr/local/etc/bash_completion.d/git-completion.bash'
-[[ -e $git_completion ]] && source $git_completion
+# TODO git zsh completion
 
 # enable colors
 export CLICOLOR=1

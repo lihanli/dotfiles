@@ -1,9 +1,11 @@
 source $DOTFILES_CONFIGS_DIR/unix_gui.bash
 
+export EDITOR='subl -n'
+
 function pipe_into_editor() {
   tmp_file="$HOME/tmp.txt"
   $@ > $tmp_file
-  $EDITOR $tmp_file
+  eval ${EDITOR} $tmp_file
 }
 
 alias gd="pipe_into_editor git diff"
