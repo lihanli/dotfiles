@@ -17,16 +17,6 @@ for file in "$dotfiles_dir"/dotfiles/*; do
   ln -s "$dotfiles_dir"/dotfiles/$file ~/.$file
 done
 
-# add common profile to bash profile or bashrc then source it
-for file in '.bash_profile' '.bashrc'; do
-  file=~/$file
-  common_profile_path="$configs_dir"/common_profile.bash
-
-  if [ -f $file ]; then
-    [[ -z $(grep $common_profile_path $file) ]] && echo "source $common_profile_path" >> $file
-  fi
-done
-
 # one time configs
 email='frankieteardrop%gmail.com'
 git config --global user.name 'Lihan Li'
