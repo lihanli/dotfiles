@@ -4,8 +4,8 @@ setopt prompt_subst
 smiley="%(?,%{$fg[green]%}☺%{$reset_color%},%{$fg[red]%}☹%{$reset_color%})"
 
 # vim mode indicator in prompt (http://superuser.com/questions/151803/how-do-i-customize-zshs-vim-mode)
-vim_ins_mode="%{$fg[cyan]%}[INS]%{$reset_color%}"
-vim_cmd_mode="%{$fg[green]%}[CMD]%{$reset_color%}"
+vim_ins_mode="%{$fg[green]%}[INS]%{$reset_color%}"
+vim_cmd_mode="%{$fg[white]%}[CMD]%{$reset_color%}"
 vim_mode=$vim_ins_mode
 
 function zle-keymap-select {
