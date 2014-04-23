@@ -30,7 +30,7 @@ setopt transient_rprompt
 
 function ssh_prompt_color() {
   if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    echo '%{%F{blue}%}'
+    echo '%{%F{yellow}%}'
   else
     echo '%{%F{green}%}'
   fi
@@ -44,5 +44,5 @@ parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-PROMPT='${vim_mode} %(!.%{$fg[red]%}.%{$fg[green]%})%n$(ssh_prompt_color)@%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(parse_git_branch)
+PROMPT='${vim_mode} $(ssh_prompt_color)%n@%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(parse_git_branch)
 ${smiley} > '
