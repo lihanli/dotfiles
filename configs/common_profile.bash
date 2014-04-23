@@ -40,6 +40,8 @@ alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias lsg='ll | grep'
 alias encrypt='gpg --cipher-algo AES256 -c'
+# make less always work with colored input
+alias less='less -R'
 
 # git aliases
 alias g='git status'
@@ -96,6 +98,44 @@ bindkey -v
 export KEYTIMEOUT=5
 # turn off automatic matching of ~/ directories (speeds things up)
 setopt no_cdable_vars
+# case insensitive matching when performing filename expansion
+setopt no_case_glob
+
+# zsh history
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=10000
+export SAVEHIST=${HISTSIZE}
+# import new commands from history (mostly)
+setopt share_history
+# reduce unnecessary blanks from commands being written to history
+setopt hist_reduce_blanks
+# if a new command line being added to the history list duplicates an older one, the older command is removed from the list
+setopt hist_ignore_all_dups
+# multiple zsh sessions will append to the same history file (incrementally, after each command is executed)
+setopt inc_append_history
+# purge duplicates first
+setopt hist_expire_dups_first
+# make some commands not show up in history
+export HISTIGNORE="ls:ll:cd:cd -:pwd:exit:date:* --help"
+
+# colors
+autoload -U colors
+colors
+
+# colored ls (one version for GNU, other for Mac OS X)
+if whence dircolors > /dev/null; then
+  eval "`dircolors -b`"
+  alias ls='ls --color=auto'
+else
+  export CLICOLOR=1
+fi
+
+# colored grep
+export GREP_COLOR='31'
+export GREP_OPTIONS='--color=auto'
+
+# zsh will not beep
+setopt no_beep
 
 source $DOTFILES_CONFIGS_DIR/prompt.zsh
 source $DOTFILES_CONFIGS_DIR/key_bindings.zsh
