@@ -93,8 +93,9 @@ esac
 # turn on vimode
 bindkey -v
 # reduce command mode timeout
-export KEYTIMEOUT=1
+export KEYTIMEOUT=5
 
 source $DOTFILES_CONFIGS_DIR/prompt.zsh
+source $DOTFILES_CONFIGS_DIR/key_bindings.zsh
 
 export PATH
