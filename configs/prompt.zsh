@@ -46,5 +46,3 @@ parse_git_branch() {
 
 PROMPT='${vim_mode} %(!.%{$fg[red]%}.%{$fg[green]%})%n$(ssh_prompt_color)@%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(parse_git_branch)
 ${smiley} > '
-
-RPROMPT='%{$fg[white]%}%T%{$reset_color%}'
