@@ -36,7 +36,6 @@ for new_path in 'node_modules/.bin' 'scripts' 'dotfiles/scripts'; do
 done
 
 # general aliases
-alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias lsg='ll | grep'
 alias encrypt='gpg --cipher-algo AES256 -c'
