@@ -1,5 +1,6 @@
 source $DOTFILES_CONFIGS_DIR/unix_gui.bash
 
+alias subl='st'
 export EDITOR='subl -n'
 
 function pipe_into_editor() {
