@@ -94,6 +94,8 @@ esac
 bindkey -v
 # reduce command mode timeout
 export KEYTIMEOUT=5
+# turn off automatic matching of ~/ directories (speeds things up)
+setopt no_cdable_vars
 
 source $DOTFILES_CONFIGS_DIR/prompt.zsh
 source $DOTFILES_CONFIGS_DIR/key_bindings.zsh
