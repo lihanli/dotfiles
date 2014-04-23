@@ -38,10 +38,6 @@ function ssh_prompt_color() {
   fi
 }
 
-function background_jobs() {
-  [[ $(jobs -l | wc -l) -gt 0 ]] && echo "⚙"
-}
-
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
