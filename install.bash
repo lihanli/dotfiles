@@ -33,6 +33,8 @@ git config --global user.name 'Lihan Li'
 git config --global user.email ${email/\%/@}
 git config --global core.excludesfile $configs_dir/gitignore_global
 git config --global core.autocrlf input
+git config color.diff auto --global
+git config color.status auto --global
 
 dotfiles_install_dir=$dotfiles_dir/install
 case `os_detect` in
