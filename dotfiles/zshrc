@@ -48,7 +48,5 @@ export ZSH=$HOME/.oh-my-zsh
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(sublime)
 
-alias subl='st'
-
 source $ZSH/oh-my-zsh.sh
 source ~/dotfiles/configs/common_profile.bash
