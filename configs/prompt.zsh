@@ -1,5 +1,7 @@
 # [zsh-git-prompt] location
 export __GIT_PROMPT_DIR=~/dotfiles/repos/https-COLON--SLASH--SLASH-github.com-SLASH-olivierverdier-SLASH-zsh-git-prompt.git/
+# dont cache git prompt
+export ZSH_THEME_GIT_PROMPT_NOCACHE=true
 # parameter expansion, command substitution and arithmetic expansion are performed in prompts
 setopt prompt_subst
 # result of last command displays either happy or sad face as a prompt
