@@ -1,5 +1,5 @@
 # [zsh-git-prompt] location
-export __GIT_PROMPT_DIR=~/dotfiles/repos/https-COLON--SLASH--SLASH-github.com-SLASH-olivierverdier-SLASH-zsh-git-prompt.git/
+export __GIT_PROMPT_DIR=$AN_REPOS_DIR/https-COLON--SLASH--SLASH-github.com-SLASH-olivierverdier-SLASH-zsh-git-prompt.git/
 # dont cache git prompt
 export ZSH_THEME_GIT_PROMPT_NOCACHE=true
 # parameter expansion, command substitution and arithmetic expansion are performed in prompts
