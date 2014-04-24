@@ -17,6 +17,9 @@ case "$TERM" in
     # shift + tab
     bindkey '^[[Z' reverse-menu-complete
 
+    # delete
+    bindkey '^[[3~' delete-char
+
     # VI MODE KEYBINDINGS (ins mode)
     bindkey -M viins '^w'    backward-kill-word
     bindkey -M viins '^a'    beginning-of-line
