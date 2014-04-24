@@ -1,3 +1,5 @@
+# [zsh-git-prompt] location
+export __GIT_PROMPT_DIR=~/dotfiles/repos/https-COLON--SLASH--SLASH-github.com-SLASH-olivierverdier-SLASH-zsh-git-prompt.git/
 # parameter expansion, command substitution and arithmetic expansion are performed in prompts
 setopt prompt_subst
 # result of last command displays either happy or sad face as a prompt
@@ -38,9 +40,5 @@ function ssh_prompt_color() {
   fi
 }
 
-parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
-
-PROMPT='${vim_mode} $(ssh_prompt_color)%n@%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(parse_git_branch)
+PROMPT='${vim_mode} $(ssh_prompt_color)%n@%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(git_super_status)
 ${smiley} > '
