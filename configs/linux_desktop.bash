@@ -1,5 +1,7 @@
 source $DOTFILES_CONFIGS_DIR/unix_gui.bash
 
+antigen bundle sublime
+
 alias subl='st'
 export EDITOR='subl -n'
 

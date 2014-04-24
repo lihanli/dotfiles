@@ -1,5 +1,4 @@
 source $DOTFILES_CONFIGS_DIR/unix_gui.bash
-unalias subl
 export EDITOR='subl -n -w'
 
 path_append '/usr/local/mysql/bin'
