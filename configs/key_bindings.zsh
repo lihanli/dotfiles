@@ -10,9 +10,6 @@ case "$TERM" in
     bindkey '^[[1~' beginning-of-line
     bindkey '^[[4~' end-of-line
 
-    # delete
-    bindkey '^[[3~' delete-char
-
     # history search
     bindkey '^[[A' history-beginning-search-backward
     bindkey '^[[B' history-beginning-search-forward
