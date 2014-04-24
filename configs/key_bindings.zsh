@@ -11,8 +11,14 @@ case "$TERM" in
     bindkey '^[[4~' end-of-line
 
     # history search
-    bindkey '^[[A' history-beginning-search-backward
-    bindkey '^[[B' history-beginning-search-forward
+    autoload -Uz up-line-or-beginning-search
+    autoload -Uz down-line-or-beginning-search
+    zle -N up-line-or-beginning-search
+    zle -N down-line-or-beginning-search
+    bindkey '\eOA' up-line-or-beginning-search
+    bindkey '\e[A' up-line-or-beginning-search
+    bindkey '\eOB' down-line-or-beginning-search
+    bindkey '\e[B' down-line-or-beginning-search
 
     # shift + tab
     bindkey '^[[Z' reverse-menu-complete
