@@ -1,11 +1,5 @@
 case "$TERM" in
   *xterm*|screen-256color)
-    # alt + arrows
-    bindkey '[D' backward-word
-    bindkey '[C' forward-word
-    bindkey '^[[1;3D' backward-word
-    bindkey '^[[1;3C' forward-word
-
     # home / end
     bindkey '^[[1~' beginning-of-line
     bindkey '^[[4~' end-of-line
