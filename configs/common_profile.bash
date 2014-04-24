@@ -62,9 +62,7 @@ alias gco='git checkout'
 alias hdep='git push heroku'
 alias gbd='git branch -D'
 
-for cmd in "gout gin gco hdep gbd"; do
-  compdef $cmd=git
-done
+compdef _git gin=git-pull
 
 # ruby aliases
 alias be='bundle exec'

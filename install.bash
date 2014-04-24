@@ -17,6 +17,9 @@ for file in "$dotfiles_dir"/dotfiles/*; do
   ln -s "$dotfiles_dir"/dotfiles/$file ~/.$file
 done
 
+# clone antigen if it doesnt exist
+[[ ! -d ~/antigen ]] && git clone https://github.com/zsh-users/antigen.git ~/antigen
+
 # one time configs
 email='frankieteardrop%gmail.com'
 git config --global user.name 'Lihan Li'
