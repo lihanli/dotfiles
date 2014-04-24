@@ -22,6 +22,8 @@ case "$TERM" in
     bindkey -M viins '^a'    beginning-of-line
     bindkey -M viins '^e'    end-of-line
     bindkey -M viins '^K'    kill-whole-line
+    bindkey -M viins '^h'    backward-delete-char
+    bindkey -M viins '^?'    backward-delete-char
     bindkey -M viins '\eOH'  beginning-of-line # Home
     bindkey -M viins '\eOF'  end-of-line       # End
   ;;
