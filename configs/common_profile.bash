@@ -29,6 +29,10 @@ if [ -d $rbenv_dir ]; then
   eval "$(rbenv init -)"
 fi
 
+# heroku toolbelt
+heroku_dir='/usr/local/heroku/bin'
+[[ -d $heroku_dir ]] && path_append $heroku_dir
+
 path_prepend /usr/local/bin
 
 for new_path in 'node_modules/.bin' 'scripts' 'dotfiles/scripts'; do
