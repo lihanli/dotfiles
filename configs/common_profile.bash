@@ -101,6 +101,8 @@ export KEYTIMEOUT=5
 setopt no_cdable_vars
 # case insensitive matching when performing filename expansion
 setopt no_case_glob
+# leave nohup jobs running
+setopt NO_HUP
 
 # zsh history
 export HISTFILE="$HOME/.zsh_history"
