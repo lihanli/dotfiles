@@ -13,6 +13,7 @@ case "$TERM" in
     bindkey '\e[A' up-line-or-beginning-search
     bindkey '\eOB' down-line-or-beginning-search
     bindkey '\e[B' down-line-or-beginning-search
+    bindkey '^R' history-incremental-search-backward
 
     # shift + tab
     bindkey '^[[Z' reverse-menu-complete
