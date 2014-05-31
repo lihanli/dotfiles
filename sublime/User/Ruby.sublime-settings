@@ -8,7 +8,8 @@
 		"Vagrantfile",
 		"jsfile",
 		".tconsole",
-		"god"
+		"god",
+		"pryrc"
 	],
 	"tab_size": 2,
 	"translate_tabs_to_spaces": true
