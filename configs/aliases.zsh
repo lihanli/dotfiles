@@ -36,4 +36,7 @@ alias migrate='be rake db:migrate && tpre'
 alias ispec='be rspec --fail-fast -f d'
 alias tu='be ruby -Itest'
 alias ir='be rails s thin'
-
+alias cu='be cucumber --backtrace --format pretty'
+alias rr="be rake routes | $EDITOR -"
+alias dm="be rake db:migrate"
+alias dmr="be rake db:migrate:redo"
