@@ -1,5 +1,3 @@
-[[ $os =~ ^ubuntu.*$ ]] && alias upgrade='sudo apt-get update && sudo apt-get upgrade'
-
 alias ll='ls -alF'
 alias lsg='ll | grep'
 alias encrypt='gpg --cipher-algo AES256 -c'
@@ -25,8 +23,6 @@ alias gin='git pull --rebase origin'
 alias gco='git checkout'
 alias hdep='git push heroku'
 alias gbd='git branch -D'
-
-compdef _git gin=git-pull
 
 # ruby aliases
 alias be='bundle exec'

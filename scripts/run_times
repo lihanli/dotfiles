@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+args = ARGV.clone
+times = args[0].to_i
+args.delete_at(0)
+cmd = args.join(' ')
+
+aliases = File.readlines("#{File.expand_path('../../configs', __FILE__)}/aliases.sh")
+times.times do
+  exit($?.exitstatus) unless system("#{aliases.join("\n")}\n#{cmd}")
+end

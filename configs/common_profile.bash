@@ -103,6 +103,11 @@ setopt no_beep
 
 source $DOTFILES_CONFIGS_DIR/prompt.zsh
 source $DOTFILES_CONFIGS_DIR/key_bindings.zsh
-source $DOTFILES_CONFIGS_DIR/aliases.zsh
+
+source $DOTFILES_CONFIGS_DIR/aliases.sh
+# git completion for gin
+compdef _git gin=git-pull
+# ubuntu specific alias
+[[ $os =~ ^ubuntu.*$ ]] && alias upgrade='sudo apt-get update && sudo apt-get upgrade'
 
 export PATH
