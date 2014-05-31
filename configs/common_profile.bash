@@ -39,48 +39,10 @@ for new_path in 'node_modules/.bin' 'scripts' 'dotfiles/scripts'; do
   path_append $HOME/$new_path
 done
 
-# general aliases
-alias ll='ls -alF'
-alias lsg='ll | grep'
-alias encrypt='gpg --cipher-algo AES256 -c'
-# make less always work with colored input
-alias less='less -R'
-
-# git aliases
-alias g='git status'
-alias ga='git add'
-alias gk='git commit -m'
-alias gsha='git rev-parse HEAD'
-alias gfo='git fetch origin'
-alias grhh='git reset --hard HEAD'
-alias gl="git log --pretty=format:'%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias gs="git stash"
-alias gsp="git stash pop"
-alias gmo='git checkout --ours --'
-alias gpu='git pull upstream master'
-alias dep='gout master && hdep master'
-
-alias gout='git push origin'
-alias gin='git pull --rebase origin'
-alias gco='git checkout'
-alias hdep='git push heroku'
-alias gbd='git branch -D'
-
-compdef _git gin=git-pull
-
-# ruby aliases
-alias be='bundle exec'
-alias drb='be rspec --drb --fail-fast -f d'
-alias tpre='be rake db:test:prepare'
-alias migrate='be rake db:migrate && tpre'
-alias ispec='be rspec --fail-fast -f d'
-alias tu='be ruby -Itest'
-alias ir='be rails s thin'
-
 # os specific config
 export DOTFILES_CONFIGS_DIR=$dotfiles_dir/configs
 
-os=`os_detect`
+os=$(os_detect)
 case $os in
   osx)
     source $DOTFILES_CONFIGS_DIR/osx.bash
@@ -91,7 +53,6 @@ case $os in
     export EDITOR='vi'
     source $DOTFILES_CONFIGS_DIR/git_diff_pipes.bash;;
 esac
-[[ $os =~ ^ubuntu.*$ ]] && alias upgrade='sudo apt-get update && sudo apt-get upgrade'
 
 # turn on vimode
 bindkey -v
@@ -142,5 +103,6 @@ setopt no_beep
 
 source $DOTFILES_CONFIGS_DIR/prompt.zsh
 source $DOTFILES_CONFIGS_DIR/key_bindings.zsh
+source $DOTFILES_CONFIGS_DIR/aliases.zsh
 
 export PATH
