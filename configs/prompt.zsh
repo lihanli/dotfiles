@@ -8,8 +8,8 @@ setopt prompt_subst
 smiley="%(?,%{$fg[green]%}☺%{$reset_color%},%{$fg[red]%}☹%{$reset_color%})"
 
 # vim mode indicator in prompt (http://superuser.com/questions/151803/how-do-i-customize-zshs-vim-mode)
-vim_ins_mode="%{$fg[green]%}[INS]%{$reset_color%}"
-vim_cmd_mode="%{$fg[white]%}[CMD]%{$reset_color%}"
+vim_ins_mode="%{$fg_bold[green]%}[INS]%{$reset_color%}"
+vim_cmd_mode="%{$fg_bold[white]%}[CMD]%{$reset_color%}"
 vim_mode=$vim_ins_mode
 
 function zle-keymap-select {
@@ -42,5 +42,5 @@ function ssh_prompt_color() {
   fi
 }
 
-PROMPT='${vim_mode} $(ssh_prompt_color)%n@%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(git_super_status)
+PROMPT='${vim_mode} $(ssh_prompt_color)%n@%m%{$reset_color%}:%{$fg_bold[cyan]%}%~%{$reset_color%}$(git_super_status)
 ${smiley} > '
