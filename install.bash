@@ -6,15 +6,16 @@ configs_dir=$dotfiles_dir/configs
 olddir=~/dotfiles_old
 
 # create dotfiles_old in homedir
-[ -d $olddir ] && rm -rf $olddir
+[[ -d $olddir ]] && rm -rf $olddir
 mkdir $olddir
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in "$dotfiles_dir"/dotfiles/*; do
   file=`basename "$file"`
+  new_file=~/.$file
 
-  mv ~/.$file $olddir
-  ln -s "$dotfiles_dir"/dotfiles/$file ~/.$file
+  [[ -f $new_file ]] && mv $new_file $olddir
+  ln -s "$dotfiles_dir"/dotfiles/$file $new_file
 done
 
 # clone antigen if it doesnt exist
