@@ -110,4 +110,6 @@ compdef _git gin=git-pull
 # ubuntu specific alias
 [[ $os =~ ^ubuntu.*$ ]] && alias upgrade='sudo apt-get update && sudo apt-get upgrade'
 
+[[ -f $DOTFILES_CONFIGS_DIR/custom.zsh ]] && source $DOTFILES_CONFIGS_DIR/custom.zsh
+
 export PATH
