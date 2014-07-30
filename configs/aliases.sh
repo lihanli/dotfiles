@@ -7,6 +7,7 @@ alias less='less -R'
 # git aliases
 alias g='git status'
 alias ga='git add'
+alias gaa='git add --all'
 alias gk='git commit -m'
 alias gsha='git rev-parse HEAD'
 alias gfo='git fetch origin'
