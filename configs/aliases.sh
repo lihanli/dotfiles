@@ -27,10 +27,10 @@ alias gbd='git branch -D'
 
 # ruby aliases
 alias be='bundle exec'
+alias sp='be rspec -f d'
 alias drb='be rspec --drb --fail-fast -f d'
 alias tpre='be rake db:test:prepare'
 alias migrate='be rake db:migrate db:test:prepare'
-alias ispec='be rspec --fail-fast -f d'
 alias tu='be ruby -Itest'
 alias ir='be rails s thin'
 alias cu='be cucumber --backtrace --format pretty'
