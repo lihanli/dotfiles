@@ -64,6 +64,8 @@ setopt no_cdable_vars
 setopt no_case_glob
 # leave nohup jobs running
 setopt NO_HUP
+# bash style comments
+setopt interactivecomments
 
 # zsh history
 export HISTFILE="$HOME/.zsh_history"
