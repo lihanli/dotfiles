@@ -21,6 +21,7 @@ function path_prepend {
 
 dotfiles_dir=~/dotfiles
 source $dotfiles_dir/functions/util.bash
+source $dotfiles_dir/functions/util.zsh
 
 # init rbenv if installed
 rbenv_dir="$HOME/.rbenv"
