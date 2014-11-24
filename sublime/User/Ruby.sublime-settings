@@ -9,7 +9,8 @@
 		"jsfile",
 		".tconsole",
 		"god",
-		"pryrc"
+		"pryrc",
+		"jbuilder"
 	],
 	"tab_size": 2,
 	"translate_tabs_to_spaces": true
