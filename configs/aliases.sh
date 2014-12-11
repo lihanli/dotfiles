@@ -26,15 +26,22 @@ alias hdep='git push heroku'
 alias gbd='git branch -D'
 
 # ruby aliases
+rc() {
+  if [[ -f "bin/$1" ]]; then
+    eval "bin/$@"
+  else
+    eval "be $@"
+  fi
+}
+
 alias be='bundle exec'
-alias sp='be rspec -f d'
-alias drb='be rspec --drb --fail-fast -f d'
-alias tpre='be rake db:test:prepare'
-alias migrate='be rake db:migrate db:test:prepare'
+alias sp='rc rspec -f d'
+alias tpre='rc rake db:test:prepare'
+alias migrate='rc rake db:migrate db:test:prepare'
 alias tu='be ruby -Itest'
-alias ir='be rails s thin'
-alias cu='be cucumber --backtrace --format pretty'
-alias rr="be rake routes | $EDITOR -"
-alias dm="be rake db:migrate"
-alias dmr="be rake db:migrate:redo"
+alias ir='rc rails s thin'
+alias cu='rc cucumber --backtrace --format pretty'
+alias rr="rc rake routes | $EDITOR -"
+alias dm="rc rake db:migrate"
+alias dmr="rc rake db:migrate:redo"
 alias tdr='tddium run'
