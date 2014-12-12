@@ -35,6 +35,7 @@ rc() {
 }
 
 alias be='bundle exec'
+alias rake='rc rake'
 alias sp='rc rspec -f d'
 alias tpre='rc rake db:test:prepare'
 alias migrate='rc rake db:migrate db:test:prepare'
