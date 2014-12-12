@@ -34,12 +34,19 @@ rc() {
   fi
 }
 
+tu() {
+  if [[ -f "bin/spring" ]]; then
+    eval "bin/spring testunit $@"
+  else
+    eval "be ruby -Itest $@"
+  fi
+}
+
 alias be='bundle exec'
 alias rake='rc rake'
 alias sp='rc rspec -f d'
 alias tpre='rc rake db:test:prepare'
 alias migrate='rc rake db:migrate db:test:prepare'
-alias tu='be ruby -Itest'
 alias ir='rc rails s thin'
 alias cu='rc cucumber --backtrace --format pretty'
 alias rr="rc rake routes | $EDITOR -"
