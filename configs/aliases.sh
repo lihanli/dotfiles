@@ -1,4 +1,4 @@
-alias ll='ls -alF'
+alias ll='ls -alFh'
 alias lsg='ll | grep'
 alias encrypt='gpg --cipher-algo AES256 -c'
 # make less always work with colored input
