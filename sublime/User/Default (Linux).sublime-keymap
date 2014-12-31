@@ -1,5 +1,6 @@
 [
   { "keys": ["ctrl+shift+a"], "command": "delete_trailing_spaces" },
   { "keys": ["ctrl+shift+c"], "command": "copy_path" },
+  { "keys": ["ctrl+]"], "command": "match_step" },
   { "keys": ["ctrl+t"], "command": "new_file" }
 ]
