@@ -51,7 +51,6 @@ case $os in
   ubuntu-desktop)
     source $DOTFILES_CONFIGS_DIR/linux_desktop.bash;;
   ubuntu-server)
-    export EDITOR='vi'
     source $DOTFILES_CONFIGS_DIR/git_diff_pipes.bash;;
 esac
 
@@ -112,7 +111,10 @@ source $DOTFILES_CONFIGS_DIR/functions.sh
 # git completion for gin
 compdef _git gin=git-pull
 # ubuntu specific alias
-[[ $os =~ ^ubuntu.*$ ]] && alias upgrade='sudo apt-get update && sudo apt-get upgrade'
+if [[ $os =~ ^ubuntu.*$ ]]; then
+  alias upgrade='sudo apt-get update && sudo apt-get upgrade'
+  export EDITOR='vi'
+fi
 
 [[ -f $DOTFILES_CONFIGS_DIR/custom.zsh ]] && source $DOTFILES_CONFIGS_DIR/custom.zsh
 
