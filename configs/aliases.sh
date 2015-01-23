@@ -28,6 +28,22 @@ alias gco='git checkout'
 alias hdep='git push heroku'
 alias gbd='git branch -D'
 
+gaap() {
+  if [[ $# -eq 0 ]]; then
+    echo 'Missing commit msg'
+    return 1
+  fi
+
+  echo -n "Commit and push '$1' to $(current_branch)? "
+  read answer
+  if [[ $answer != 'y' ]]; then
+    echo 'Not committed'
+    return 1
+  fi
+
+  gaa && gk $1 && goutc
+}
+
 # ruby aliases
 rc() {
   if [[ -f "bin/$1" ]]; then
