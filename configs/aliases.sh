@@ -3,6 +3,7 @@ alias lsg='ll | grep'
 alias encrypt='gpg --cipher-algo AES256 -c'
 # make less always work with colored input
 alias less='less -R'
+alias fr='find . -name'
 
 # git aliases
 alias g='git status'
