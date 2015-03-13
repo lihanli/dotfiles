@@ -73,3 +73,4 @@ alias rr="rc rake routes | $EDITOR -"
 alias dm="rc rake db:migrate"
 alias dmr="rc rake db:migrate:redo"
 alias tdr='tddium run'
+alias trr='tddium rerun'
