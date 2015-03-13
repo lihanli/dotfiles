@@ -1,4 +1,7 @@
 #!/usr/bin/env ruby
+raise "missing gpg" unless `gpg --version`.include?('gpg')
+raise 'missing aws' unless `aws --version`.include?('aws-cli')
+
 require 'optparse'
 
 options = {}
