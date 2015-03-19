@@ -14,6 +14,7 @@ alias gsha='git rev-parse HEAD'
 alias gfo='git fetch origin'
 alias grhh='git reset --hard HEAD'
 alias gl="git log --pretty=format:'%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gll='gl -p'
 alias gs="git stash"
 alias gsp="git stash pop"
 alias gmo='git checkout --ours --'
