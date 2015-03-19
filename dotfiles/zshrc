@@ -13,7 +13,7 @@ antigen-bundle zsh-users/zsh-completions
 # set fpath for zsh-completions
 fpath=($AN_REPOS_DIR/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-completions.git/src $fpath)
 
-source ~/dotfiles/configs/common_profile.bash
+source ~/dotfiles/configs/common_profile.zsh
 
 # load the plugins
 antigen apply
