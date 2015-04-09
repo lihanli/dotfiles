@@ -20,6 +20,7 @@ alias gsp="git stash pop"
 alias gmo='git checkout --ours --'
 alias gpu='git pull upstream master'
 alias dep='gout master && hdep master'
+alias gsc='git clone --depth=1'
 
 alias current_branch='git rev-parse --abbrev-ref HEAD'
 alias gout='git push origin'
