@@ -74,5 +74,5 @@ alias cu='rc cucumber --backtrace --format pretty'
 alias rr="rc rake routes | $EDITOR -"
 alias dm="rc rake db:migrate"
 alias dmr="rc rake db:migrate:redo"
-alias tdr='tddium run'
-alias trr='tddium rerun'
+alias sor='solano run'
+alias srr='solano rerun'
