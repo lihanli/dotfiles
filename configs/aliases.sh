@@ -66,7 +66,7 @@ tu() {
 
 alias be='bundle exec'
 alias rake='rc rake'
-alias sp='rc rspec -f d'
+alias sp='rc rspec -f d --color'
 alias spf='sp --fail-fast'
 alias tpre='rc rake db:test:prepare'
 alias migrate='rc rake db:migrate db:test:prepare'
