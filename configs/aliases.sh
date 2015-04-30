@@ -30,6 +30,7 @@ alias goutc='gout $(current_branch)'
 alias gco='git checkout'
 alias hdep='git push heroku'
 alias gbd='git branch -D'
+alias glb='git for-each-ref --sort=-committerdate refs/heads/ | less'
 
 gaap() {
   if [[ $# -eq 0 ]]; then
