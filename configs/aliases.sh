@@ -78,3 +78,4 @@ alias dm="rc rake db:migrate"
 alias dmr="rc rake db:migrate:redo"
 alias sor='solano run'
 alias srr='solano rerun'
+alias load_test_schema='RAILS_ENV=test rake db:schema:load'
