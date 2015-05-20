@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'active_support/inflector'
+
+puts(ARGV[0].underscore.camelize(:lower))
