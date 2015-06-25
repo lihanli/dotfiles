@@ -2,4 +2,5 @@
 .sass-cache
 .vagrant
 .bundle
+node_modules/
 *.log
