@@ -12,3 +12,7 @@ function pipe_into_editor() {
 
 alias gd="pipe_into_editor git diff"
 alias gdc="ga --all .; pipe_into_editor git diff --cached"
+
+function gds {
+  pipe_into_editor git diff $1..$2
+}
