@@ -1,0 +1,2 @@
+#!/usr/bin/env ruby
+system('gsutil', '-m', 'cp', '-r', ARGV[0], "gs://#{ARGV[1]}")
