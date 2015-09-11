@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[<% if (var) { %>
+<% } else { %>
+<% } %>]]></content>
+  <tabTrigger>uif</tabTrigger>
+  <scope>source.coffee</scope>
+  <description>underscore template if</description>
+</snippet>
