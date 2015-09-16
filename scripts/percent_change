@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+require 'bigdecimal'
+old_val = BigDecimal.new(ARGV[0])
+new_val = BigDecimal.new(ARGV[1])
+puts ((new_val - old_val) / old_val * BigDecimal.new(100)).to_f
