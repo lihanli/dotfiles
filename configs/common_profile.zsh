@@ -36,6 +36,14 @@ heroku_dir='/usr/local/heroku/bin'
 
 path_prepend /usr/local/bin
 
+# init linuxbrew
+linuxbrew_dir="$HOME/.linuxbrew"
+if [[ -d $linuxbrew_dir ]]; then
+  path_prepend $linuxbrew_dir/bin
+  export MANPATH="$linuxbrew_dir/share/man:$MANPATH"
+  export INFOPATH="$linuxbrew_dir/share/info:$INFOPATH"
+fi
+
 for new_path in 'node_modules/.bin' 'scripts' 'dotfiles/scripts'; do
   path_append $HOME/$new_path
 done
