@@ -52,6 +52,7 @@ done
 export DOTFILES_CONFIGS_DIR=$dotfiles_dir/configs
 
 source $DOTFILES_CONFIGS_DIR/functions.sh
+source $DOTFILES_CONFIGS_DIR/aliases.sh
 
 os=$(os_detect)
 case $os in
@@ -115,7 +116,6 @@ setopt no_beep
 
 source $DOTFILES_CONFIGS_DIR/prompt.zsh
 source $DOTFILES_CONFIGS_DIR/key_bindings.zsh
-source $DOTFILES_CONFIGS_DIR/aliases.sh
 
 # git completion for gin
 compdef _git gin=git-pull
