@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+require 'bigdecimal'
+val = BigDecimal.new(ARGV[0])
+percent = BigDecimal.new(ARGV[1]) / 100
+
+puts ((val * percent) + val).to_f
