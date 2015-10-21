@@ -125,6 +125,9 @@ if [[ $os =~ ^ubuntu.*$ ]]; then
   export EDITOR='vi'
 fi
 
+# add completions dir
+fpath=($dotfiles_dir/completions $fpath)
+
 [[ -f $DOTFILES_CONFIGS_DIR/custom.zsh ]] && source $DOTFILES_CONFIGS_DIR/custom.zsh
 
 export PATH
