@@ -51,6 +51,12 @@ done
 # os specific config
 export DOTFILES_CONFIGS_DIR=$dotfiles_dir/configs
 
+# ubuntu specific alias
+if [[ $os =~ ^ubuntu.*$ ]]; then
+  alias upgrade='sudo apt-get update && sudo apt-get upgrade'
+  export EDITOR='vi'
+fi
+
 source $DOTFILES_CONFIGS_DIR/functions.sh
 source $DOTFILES_CONFIGS_DIR/aliases.sh
 
@@ -119,11 +125,6 @@ source $DOTFILES_CONFIGS_DIR/key_bindings.zsh
 
 # git completion for gin
 compdef _git gin=git-pull
-# ubuntu specific alias
-if [[ $os =~ ^ubuntu.*$ ]]; then
-  alias upgrade='sudo apt-get update && sudo apt-get upgrade'
-  export EDITOR='vi'
-fi
 
 # add completions dir
 fpath=($dotfiles_dir/completions $fpath)
