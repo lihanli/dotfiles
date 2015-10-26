@@ -99,7 +99,7 @@ setopt inc_append_history
 # purge duplicates first
 setopt hist_expire_dups_first
 # make some commands not show up in history
-export HISTIGNORE="ls:ll:cd:cd -:pwd:exit:date:* --help"
+export HISTIGNORE="ls:l:ll:cd:cd -:pwd:exit:date:* --help"
 
 # colors
 autoload -U colors
