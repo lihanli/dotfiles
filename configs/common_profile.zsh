@@ -51,6 +51,8 @@ done
 # os specific config
 export DOTFILES_CONFIGS_DIR=$dotfiles_dir/configs
 
+os=$(os_detect)
+
 # ubuntu specific alias
 if [[ $os == *ubuntu* ]]; then
   alias upgrade='sudo apt-get update && sudo apt-get upgrade'
@@ -60,7 +62,6 @@ fi
 source $DOTFILES_CONFIGS_DIR/functions.sh
 source $DOTFILES_CONFIGS_DIR/aliases.sh
 
-os=$(os_detect)
 case $os in
   osx)
     source $DOTFILES_CONFIGS_DIR/osx.bash
