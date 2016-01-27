@@ -52,7 +52,7 @@ done
 export DOTFILES_CONFIGS_DIR=$dotfiles_dir/configs
 
 # ubuntu specific alias
-if [[ os == *ubuntu* ]]; then
+if [[ $os == *ubuntu* ]]; then
   alias upgrade='sudo apt-get update && sudo apt-get upgrade'
   export EDITOR='vi'
 fi
