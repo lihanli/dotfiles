@@ -4,5 +4,5 @@ raise unless File.directory?(DROPBOX_DIR)
 
 FILENAME = "#{ENV['HOME']}/Dropbox.tar.bz2"
 
-system("tar cvfj #{FILENAME} -P --exclude='#{DROPBOX_DIR}/.dropbox' --exclude='#{DROPBOX_DIR}/.dropbox.cache' #{DROPBOX_DIR}")
+system("tar cvfj #{FILENAME} -h -P --exclude='#{DROPBOX_DIR}/.dropbox' --exclude='#{DROPBOX_DIR}/.dropbox.cache' #{DROPBOX_DIR}")
 system("backup_file #{FILENAME} -m")
