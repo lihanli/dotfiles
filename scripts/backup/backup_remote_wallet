@@ -1,4 +1,0 @@
-#!/usr/bin/env ruby
-TEMP_LOCATION = '~/Desktop/remote_wallet.dat'
-system("scp bitcoind:/home/ubuntu/.bitcoin/wallet.dat #{TEMP_LOCATION}")
-system("backup_file #{TEMP_LOCATION} -m -e")
