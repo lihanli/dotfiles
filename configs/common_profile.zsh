@@ -19,6 +19,10 @@ function path_prepend {
   export PATH=$1:$PATH
 }
 
+function path_append_if_exists {
+  [[ -d $1 ]] && path_append $1
+}
+
 dotfiles_dir=~/dotfiles
 source $dotfiles_dir/functions/util.bash
 source $dotfiles_dir/functions/util.zsh
@@ -31,8 +35,10 @@ if [ -d $rbenv_dir ]; then
 fi
 
 # heroku toolbelt
-heroku_dir='/usr/local/heroku/bin'
-[[ -d $heroku_dir ]] && path_append $heroku_dir
+path_append_if_exists /usr/local/heroku/bin
+
+# go
+path_append_if_exists /usr/local/go/bin
 
 path_prepend /usr/local/bin
 
