@@ -8,7 +8,6 @@
 	[
 		"Alignment",
 		"ChangeQuotes",
-		"CoffeeScript",
 		"Cucumber",
 		"Git",
 		"Jade",
@@ -19,10 +18,9 @@
 		"Ruby Slim",
 		"Sass",
 		"Stylus",
-		"SublimeBlockCursor",
 		"SyntaxManager",
 		"Terminal",
-		"Theme - Soda",
+		"Theme - SoDaReloaded",
 		"TrailingSpaces",
 		"TypeScript"
 	]

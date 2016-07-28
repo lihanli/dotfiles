@@ -1,6 +1,6 @@
 # find sublime directory
-if [ -d ~/.config/sublime-text-2 ]; then
-  sublime_dir=~/.config/sublime-text-2
+if [ -d ~/.config/sublime-text-3 ]; then
+  sublime_dir=~/.config/sublime-text-3
 else
   sublime_dir="$HOME/Library/Application Support/Sublime Text 2"
 fi
