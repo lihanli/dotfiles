@@ -5,8 +5,8 @@
 	"detect_indentation": false,
 	"dictionary": "Packages/Language - English/en_US.dic",
 	"drag_text": false,
-	"ensure_newline_at_eof_on_save": true,
 	"enable_tab_scrolling": false,
+	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
 	[
 		"*.log",
@@ -21,6 +21,7 @@
 		".sass-cache",
 		"tmp",
 		"bower_components",
+    "coverage",
 		"node_modules"
 	],
 	"font_face": "Droid Sans Mono",

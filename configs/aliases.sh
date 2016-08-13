@@ -76,6 +76,7 @@ alias cu='rc cucumber --backtrace --format pretty'
 alias rr='rc rake routes | eval $EDITOR -'
 alias dm="rc rake db:migrate"
 alias dmr="rc rake db:migrate:redo"
+alias dmrd='rc rake db:rollback STEP=1'
 alias sor='solano run'
 alias srr='solano rerun'
 alias load_test_schema='RAILS_ENV=test rake db:schema:load'
