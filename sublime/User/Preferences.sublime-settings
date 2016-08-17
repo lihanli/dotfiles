@@ -21,7 +21,7 @@
 		".sass-cache",
 		"tmp",
 		"bower_components",
-    "coverage",
+		"coverage",
 		"node_modules"
 	],
 	"font_face": "Droid Sans Mono",
