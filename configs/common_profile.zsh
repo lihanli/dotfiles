@@ -34,6 +34,10 @@ if [ -d $rbenv_dir ]; then
   eval "$(rbenv init -)"
 fi
 
+# init NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
 # heroku toolbelt
 path_append_if_exists /usr/local/heroku/bin
 
