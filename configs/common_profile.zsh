@@ -124,10 +124,6 @@ else
   export CLICOLOR=1
 fi
 
-# colored grep
-export GREP_COLOR='31'
-export GREP_OPTIONS='--color=auto'
-
 # zsh will not beep
 setopt no_beep
 
