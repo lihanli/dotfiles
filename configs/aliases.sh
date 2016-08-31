@@ -31,6 +31,7 @@ alias gco='git checkout'
 alias hdep='git push heroku'
 alias gbd='git branch -D'
 alias glb="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
+alias gsu='git submodule update --init'
 
 gaap() {
   if [[ $# -eq 0 ]]; then
