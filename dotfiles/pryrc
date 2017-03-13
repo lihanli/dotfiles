@@ -27,3 +27,16 @@ end
 Pry.config.commands.command "lastcopy", "Last result copy to clipboard" do
   pbcopy _pry_.last_result.chomp
 end
+
+def load_rails
+  rails = File.join Dir.getwd, 'config', 'environment.rb'
+
+  if File.exist?(rails)
+    require rails
+
+    require 'rails/console/app'
+    require 'rails/console/helpers'
+    TOPLEVEL_BINDING.eval('self').extend ::Rails::ConsoleMethods
+    puts 'rails loaded'
+  end
+end
