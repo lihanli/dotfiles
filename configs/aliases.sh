@@ -81,5 +81,6 @@ alias dmr="rc rake db:migrate:redo"
 alias dmrd='rc rake db:rollback STEP=1'
 alias sor='solano run'
 alias srr='solano rerun'
+alias rl='rc rubocop --display-cop-names --auto-correct'
 alias load_test_schema='RAILS_ENV=test rake db:schema:load'
 alias mo='ne mocha'
