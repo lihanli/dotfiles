@@ -6,7 +6,7 @@ def pbcopy(str)
   command = if (/darwin/ =~ RUBY_PLATFORM) != nil
     'pbcopy'
   else
-    'xsel --clipboard --input'
+    'xclip -selection clipboard'
   end
 
   IO.popen(command, 'r+') {|io| io.puts str }
