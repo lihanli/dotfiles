@@ -31,6 +31,7 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
+		"Markdown"
 	],
 	"margin": 0,
 	"remember_open_files": false,
