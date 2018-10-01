@@ -19,7 +19,11 @@ for file in "$dotfiles_dir"/dotfiles/*; do
 done
 
 # clone antigen if it doesnt exist
-[[ ! -d ~/antigen ]] && git clone https://github.com/zsh-users/antigen.git ~/antigen
+if [[ ! -d ~/antigen ]]; then
+  git clone https://github.com/zsh-users/antigen.git ~/antigen
+  cd ~/antigen
+  git checkout 45e38ced238840ef049ac5fa7cc8006302bf3e50
+fi
 
 # one time configs
 email='frankieteardrop%gmail.com'
