@@ -22,7 +22,7 @@ done
 if [[ ! -d ~/antigen ]]; then
   git clone https://github.com/zsh-users/antigen.git ~/antigen
   cd ~/antigen
-  git checkout 45e38ced238840ef049ac5fa7cc8006302bf3e50
+  git checkout 74aa89757038e42d472db22cb5b5bc6cbd4edb93
 fi
 
 # one time configs

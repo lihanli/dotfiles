@@ -1,9 +1,5 @@
 source $DOTFILES_CONFIGS_DIR/unix_gui.bash
 
-antigen bundle sublime
-
-alias subl='st'
-
 function pipe_into_editor() {
   tmp_file="$HOME/tmp.txt"
   $@ > $tmp_file
