@@ -1,6 +1,3 @@
-# [zsh-git-prompt] location
-# dont cache git prompt
-export ZSH_THEME_GIT_PROMPT_NOCACHE=true
 # parameter expansion, command substitution and arithmetic expansion are performed in prompts
 setopt prompt_subst
 # result of last command displays either happy or sad face as a prompt
