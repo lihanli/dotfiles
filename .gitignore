@@ -1,4 +1,7 @@
-repos/
 configs/custom.zsh
 sublime/User/Package Control.merged-ca-bundle
 sublime/User/oscrypto-ca-bundle.crt
+.resources
+.zcompdump*
+bundles
+init.zsh*
