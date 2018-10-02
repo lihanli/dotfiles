@@ -6,7 +6,6 @@ source ~/antigen/antigen.zsh
 
 antigen use oh-my-zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle olivierverdier/zsh-git-prompt
 
 # load the plugins
 antigen apply
