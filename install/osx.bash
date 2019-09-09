@@ -28,12 +28,6 @@ defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
 # Menu bar: disable transparency
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 
-# Use scroll gesture with the Ctrl (^) modifier key to zoom
-defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
-defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
-# Follow the keyboard focus while zoomed in
-defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
-
 # Disable press-and-hold for keys in favor of key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
@@ -125,9 +119,6 @@ defaults write com.apple.Safari HomePage -string "about:blank"
 
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
-
-# Disable local Time Machine backups
-hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 # add dotfiles scripts dir to fastscripts
 defaults write com.red-sweater.FastScripts ScriptTreePathsKey '("FSSP%%%$HOME$/dotfiles/scripts/apple", "/Library/Scripts")'
