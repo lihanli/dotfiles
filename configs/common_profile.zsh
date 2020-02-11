@@ -41,6 +41,9 @@ export NVM_DIR="$HOME/.nvm"
 # heroku toolbelt
 path_append_if_exists /usr/local/heroku/bin
 
+# elastic beanstalk
+path_append_if_exists "$HOME/.ebcli-virtual-env/executables"
+
 # go
 path_append_if_exists /usr/local/go/bin
 
