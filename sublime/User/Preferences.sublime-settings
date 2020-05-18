@@ -36,7 +36,7 @@
 	"margin": 0,
 	"remember_open_files": false,
 	"scroll_past_end": true,
-	"show_tab_close_buttons": false,
+	"show_tab_close_buttons": true,
 	"tab_size": 2,
 	"theme": "SoDaReloaded Dark.sublime-theme",
 	"trailing_spaces_include_current_line": false,
