@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+require 'pry'
+DRIVE_DIR = ENV['DRIVE_DIR']
+CONFLICT_FILENAME = '[Conflict]'
+
+conflict_files = []
+Dir.glob("#{DRIVE_DIR}/**/*.*").each do |file|
+  conflict_files << file if file.include?(CONFLICT_FILENAME)
+end
+
+def get_original_file(conflict_file)
+  filename = File.basename(conflict_file, ".*")
+  extension = File.extname(conflict_file)
+  "#{File.dirname(conflict_file)}/#{filename[0...filename.index(CONFLICT_FILENAME)]}#{extension}"
+end
+
+conflict_files.each do |conflict_file|
+  original_file = get_original_file(conflict_file)
+  same = system('diff', original_file, conflict_file, out: File::NULL)
+
+  if same
+    puts "deleting #{conflict_file}"
+    File.delete(conflict_file)
+  else
+    puts "#{conflict_file} different from original"
+  end
+end
