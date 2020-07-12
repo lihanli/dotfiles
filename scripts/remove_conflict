@@ -2,6 +2,7 @@
 require 'pry'
 DRIVE_DIR = ENV['DRIVE_DIR']
 CONFLICT_FILENAME = '[Conflict]'
+raise 'DRIVE_DIR blank' if DRIVE_DIR.nil?
 
 conflict_files = []
 Dir.glob("#{DRIVE_DIR}/**/*.*").each do |file|
