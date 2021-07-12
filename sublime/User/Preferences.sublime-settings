@@ -31,7 +31,7 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Markdown"
+		"Markdown",
 	],
 	"margin": 0,
 	"remember_open_files": false,
@@ -41,5 +41,5 @@
 	"theme": "SoDaReloaded Dark.sublime-theme",
 	"trailing_spaces_include_current_line": false,
 	"translate_tabs_to_spaces": true,
-	"word_wrap": true
+	"word_wrap": true,
 }

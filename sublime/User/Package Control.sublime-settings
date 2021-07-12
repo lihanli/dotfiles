@@ -7,7 +7,6 @@
 	"installed_packages":
 	[
 		"Alignment",
-		"Babel",
 		"Better CoffeeScript",
 		"ChangeQuotes",
 		"Cucumber",
@@ -25,6 +24,6 @@
 		"Terminal",
 		"Theme - SoDaReloaded",
 		"TrailingSpaces",
-		"TypeScript"
-	]
+		"TypeScript",
+	],
 }
