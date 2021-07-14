@@ -30,7 +30,7 @@ source $dotfiles_dir/functions/util.zsh
 # init rbenv if installed
 rbenv_dir="$HOME/.rbenv"
 if [ -d $rbenv_dir ]; then
-  path_append $rbenv_dir/bin
+  path_prepend $rbenv_dir/bin
   eval "$(rbenv init -)"
 fi
 
