@@ -9,7 +9,7 @@ function pipe_into_editor() {
 alias gd="pipe_into_editor git diff"
 alias gdc="ga --all .; pipe_into_editor git diff --cached"
 alias chrome='google-chrome'
-alias rr='pipe_into_editor rc rake routes'
+alias rr='pipe_into_editor rc rails routes'
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 
