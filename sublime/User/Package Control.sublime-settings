@@ -6,7 +6,6 @@
 	],
 	"installed_packages":
 	[
-		"Alignment",
 		"Better CoffeeScript",
 		"ChangeQuotes",
 		"Cucumber",
