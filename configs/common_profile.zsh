@@ -27,13 +27,6 @@ dotfiles_dir=~/dotfiles
 source $dotfiles_dir/functions/util.bash
 source $dotfiles_dir/functions/util.zsh
 
-# init rbenv if installed
-rbenv_dir="$HOME/.rbenv"
-if [ -d $rbenv_dir ]; then
-  path_prepend $rbenv_dir/bin
-  eval "$(rbenv init -)"
-fi
-
 # init NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
@@ -140,5 +133,12 @@ compdef _git gin=git-pull
 fpath=($dotfiles_dir/completions $fpath)
 
 [[ -f $DOTFILES_CONFIGS_DIR/custom.zsh ]] && source $DOTFILES_CONFIGS_DIR/custom.zsh
+
+# init rbenv if installed
+rbenv_dir="$HOME/.rbenv"
+if [ -d $rbenv_dir ]; then
+  path_prepend $rbenv_dir/bin
+  eval "$(rbenv init -)"
+fi
 
 export PATH
