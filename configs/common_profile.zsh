@@ -76,6 +76,8 @@ case $os in
     source $DOTFILES_CONFIGS_DIR/linux_desktop.bash;;
   ubuntu-server)
     source $DOTFILES_CONFIGS_DIR/git_diff_pipes.bash;;
+  wsl)
+    source $DOTFILES_CONFIGS_DIR/wsl.bash;;
 esac
 
 # turn on vimode
