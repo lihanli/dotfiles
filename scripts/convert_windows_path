@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+path = ARGV[0]
+
+res =
+  if path.include?('wsl$')
+    '/' + path.split('\\').drop(4).join('/')
+  else
+    path
+  end
+
+puts res

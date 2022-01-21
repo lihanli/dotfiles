@@ -12,6 +12,11 @@ alias gd="pipe_into_editor git diff"
 alias gdc="ga --all .; pipe_into_editor git diff --cached"
 alias rr='pipe_into_editor rc rails routes'
 
+unalias spf
+function spf() {
+  sp --fail-fast $(convert_windows_path $1)
+}
+
 function gds {
   pipe_into_editor git diff $1..$2
 }
