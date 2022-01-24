@@ -59,7 +59,7 @@ if [[ -d $pyenv_dir ]]; then
   eval "$(pyenv virtualenv-init -)"
 fi
 
-for new_path in 'node_modules/.bin' 'scripts' 'dotfiles/scripts' '.local/bin'; do
+for new_path in 'node_modules/.bin' 'scripts' 'dotfiles/scripts' '.local/bin' '.ebcli-virtual-env/executables'; do
   path_append $HOME/$new_path
 done
 
