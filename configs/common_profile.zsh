@@ -50,6 +50,15 @@ if [[ -d $linuxbrew_dir ]]; then
   export INFOPATH="$linuxbrew_dir/share/info:$INFOPATH"
 fi
 
+# init pyenv
+pyenv_dir="$HOME/.pyenv"
+if [[ -d $pyenv_dir ]]; then
+  path_prepend $pyenv_dir/bin
+  export PYENV_ROOT="$pyenv_dir"
+  eval "$(pyenv init --path)"
+  eval "$(pyenv virtualenv-init -)"
+fi
+
 for new_path in 'node_modules/.bin' 'scripts' 'dotfiles/scripts'; do
   path_append $HOME/$new_path
 done
