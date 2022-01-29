@@ -2,12 +2,14 @@ function subl() {
   nohup /mnt/c/Program\ Files/Sublime\ Text/sublime_text.exe -n $1 >/dev/null 2>&1 &
 }
 
+WSL_PREFIX='\\wsl$\Ubuntu-'
+VERSION=$(lsb_release -a 2> /dev/null | grep Release | awk -F ' ' '{print $NF}')
+export WSL_PATH_PREFIX="$WSL_PREFIX$VERSION\\"
+
 function pipe_into_editor() {
   tmp_file="$HOME/tmp.txt"
   $@ > $tmp_file
-  PREFIX='\\wsl$\Ubuntu-'
-  VERSION=$(lsb_release -a 2> /dev/null | grep Release | awk -F ' ' '{print $NF}')
-  subl "$PREFIX$VERSION\home\\$(whoami)\tmp.txt"
+  subl "${WSL_PATH_PREFIX}home\\$(whoami)\tmp.txt"
 }
 
 alias gd="pipe_into_editor git diff"

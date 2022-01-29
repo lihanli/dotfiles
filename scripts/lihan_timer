@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+sleep(ARGV[0].to_i)
+system('powershell.exe', '-c', "(New-Object Media.SoundPlayer 'Z:\\home\\lihan\\dotfiles\\scripts\\resources\\alert.wav').PlaySync();")
