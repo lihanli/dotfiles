@@ -5,6 +5,8 @@ end
 def pbcopy(str)
   command = if (/darwin/ =~ RUBY_PLATFORM) != nil
     'pbcopy'
+  elsif system('which clip.exe')
+    'clip.exe'
   else
     'xclip -selection clipboard'
   end
@@ -14,18 +16,18 @@ def pbcopy(str)
 end
 
 Pry.config.commands.command "hiscopy", "History copy to clipboard" do |n|
-  pbcopy _pry_.input_array[n ? n.to_i : -1]
+  pbcopy pry_instance.input_array[n ? n.to_i : -1]
 end
 
 Pry.config.commands.command "copy", "Copy to clipboard" do |str|
   unless str
-    str = "#{_pry_.input_array[-1]}#=> #{_pry_.last_result}\n"
+    str = "#{pry_instance.input_array[-1]}#=> #{pry_instance.last_result}\n"
   end
   pbcopy str
 end
 
 Pry.config.commands.command "lastcopy", "Last result copy to clipboard" do
-  pbcopy _pry_.last_result.chomp
+  pbcopy pry_instance.last_result.chomp
 end
 
 def load_rails
