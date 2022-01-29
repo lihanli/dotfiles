@@ -1,11 +1,13 @@
-alias subl='/mnt/c/Program\ Files/Sublime\ Text/sublime_text.exe'
+function subl() {
+  nohup /mnt/c/Program\ Files/Sublime\ Text/sublime_text.exe -n $1 >/dev/null 2>&1 &
+}
 
 function pipe_into_editor() {
   tmp_file="$HOME/tmp.txt"
   $@ > $tmp_file
   PREFIX='\\wsl$\Ubuntu-'
   VERSION=$(lsb_release -a 2> /dev/null | grep Release | awk -F ' ' '{print $NF}')
-  subl -n "$PREFIX$VERSION\home\\$(whoami)\tmp.txt"
+  subl "$PREFIX$VERSION\home\\$(whoami)\tmp.txt"
 }
 
 alias gd="pipe_into_editor git diff"
