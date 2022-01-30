@@ -1,5 +1,5 @@
 function subl() {
-  nohup /mnt/c/Program\ Files/Sublime\ Text/sublime_text.exe -n $(convert_linux_path $1) >/dev/null 2>&1 &
+  nohup /mnt/c/Program\ Files/Sublime\ Text/sublime_text.exe -n "$(convert_linux_path $1)" >/dev/null 2>&1 &
 }
 
 WSL_PREFIX='\\wsl$\Ubuntu-'
