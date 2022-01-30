@@ -1,5 +1,5 @@
 function subl() {
-  nohup /mnt/c/Program\ Files/Sublime\ Text/sublime_text.exe -n $1 >/dev/null 2>&1 &
+  nohup /mnt/c/Program\ Files/Sublime\ Text/sublime_text.exe -n $(convert_linux_path $1) >/dev/null 2>&1 &
 }
 
 WSL_PREFIX='\\wsl$\Ubuntu-'
@@ -9,7 +9,7 @@ export WSL_PATH_PREFIX="$WSL_PREFIX$VERSION\\"
 function pipe_into_editor() {
   tmp_file="$HOME/tmp.txt"
   $@ > $tmp_file
-  subl "${WSL_PATH_PREFIX}home\\$(whoami)\tmp.txt"
+  subl $tmp_file
 }
 
 alias gd="pipe_into_editor git diff"
