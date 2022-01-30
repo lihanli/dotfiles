@@ -4,7 +4,7 @@ function subl() {
 
 WSL_PREFIX='\\wsl$\Ubuntu-'
 VERSION=$(lsb_release -a 2> /dev/null | grep Release | awk -F ' ' '{print $NF}')
-export WSL_PATH_PREFIX="$WSL_PREFIX$VERSION\\"
+export WSL_PATH_PREFIX="$WSL_PREFIX$VERSION"
 
 function pipe_into_editor() {
   tmp_file="$HOME/tmp.txt"

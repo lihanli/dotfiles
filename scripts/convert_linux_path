@@ -3,4 +3,4 @@
 path = ARGV[0]
 Dir.chdir(File.dirname(path))
 
-puts ENV["WSL_PATH_PREFIX"][0...-1] + Dir.pwd.gsub('/', '\\') + '\\' + File.basename(path)
+puts ENV["WSL_PATH_PREFIX"] + Dir.pwd.gsub('/', '\\') + '\\' + File.basename(path)
