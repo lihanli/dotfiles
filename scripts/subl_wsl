@@ -1,4 +1,12 @@
 #!/usr/bin/env ruby
 SUBL_EXE = '/mnt/c/Program\ Files/Sublime\ Text/sublime_text.exe'
 
-system("nohup #{SUBL_EXE} -n \"$(wslpath -w '#{ARGV[0]}')\" >/dev/null 2>&1 &")
+path = ARGV[0]
+subl_path =
+  if path.nil? || path.strip == ''
+    ''
+  else
+    "\"$(wslpath -w '#{ARGV[0]}')\""
+  end
+
+system("nohup #{SUBL_EXE} -n #{subl_path} >/dev/null 2>&1 &")
