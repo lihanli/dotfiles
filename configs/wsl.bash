@@ -1,9 +1,5 @@
 alias subl='subl_wsl'
 
-function subl_win_path() {
-  nohup /mnt/c/Program\ Files/Sublime\ Text/sublime_text.exe "$1" >/dev/null 2>&1 &
-}
-
 WSL_PREFIX='\\wsl$\Ubuntu-'
 VERSION=$(lsb_release -a 2> /dev/null | grep Release | awk -F ' ' '{print $NF}')
 export WSL_PATH_PREFIX="$WSL_PREFIX$VERSION"
