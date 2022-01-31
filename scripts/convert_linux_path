@@ -1,6 +1,28 @@
 #!/usr/bin/env ruby
-
 path = ARGV[0]
-Dir.chdir(File.dirname(path))
 
-puts ENV["WSL_PATH_PREFIX"] + Dir.pwd.gsub('/', '\\') + '\\' + File.basename(path)
+if path.nil? || path.strip == ''
+  puts('')
+  exit(true)
+end
+
+path_is_directory = File.directory?(path)
+
+if path_is_directory
+  Dir.chdir(path)
+else
+  Dir.chdir(File.dirname(path))
+end
+
+realpath = File.realpath(Dir.pwd)
+
+if realpath.start_with?('/mnt/')
+  win_path = realpath.split('/').drop(2)
+  win_path[0] = win_path[0] + ':'
+  win_path << File.basename(path) unless path_is_directory
+  puts win_path.join('\\')
+else
+  wsl_path = ENV["WSL_PATH_PREFIX"] + realpath.gsub('/', '\\')
+  wsl_path += '\\' + File.basename(path) unless path_is_directory
+  puts wsl_path
+end
