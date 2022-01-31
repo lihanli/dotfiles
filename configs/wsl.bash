@@ -1,6 +1,4 @@
-function subl() {
-  nohup /mnt/c/Program\ Files/Sublime\ Text/sublime_text.exe -n "$(convert_linux_path $1)" >/dev/null 2>&1 &
-}
+alias subl='subl_wsl'
 
 function subl_win_path() {
   nohup /mnt/c/Program\ Files/Sublime\ Text/sublime_text.exe "$1" >/dev/null 2>&1 &
@@ -32,7 +30,14 @@ function gds {
 function open_common_docs() {
   subl
   sleep 2
-  subl_win_path 'C:\Users\lihan\Google Drive\files\documents\mfd.txt'
-  subl_win_path 'C:\Users\lihan\Google Drive\files\documents\todo.txt'
-  subl_win_path 'C:\Users\lihan\Google Drive\files\sysadmin\norgate update.txt'
+  declare -a arr=(
+    'C:\Users\lihan\Google Drive\files\documents\mfd.txt'
+    'C:\Users\lihan\Google Drive\files\documents\todo.txt'
+    'C:\Users\lihan\Google Drive\files\sysadmin\norgate update.txt'
+  )
+
+  for i in "${arr[@]}"
+  do
+    nohup /mnt/c/Program\ Files/Sublime\ Text/sublime_text.exe "$i" >/dev/null 2>&1 &
+  done
 }

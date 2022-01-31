@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+SUBL_EXE = '/mnt/c/Program\ Files/Sublime\ Text/sublime_text.exe'
+
+path = ARGV[0]
+realpath =
+  if path.nil?
+    nil
+  else
+    File.realpath(File.dirname(path))
+  end
+
+if realpath.nil?
+  system("nohup #{SUBL_EXE} -n >/dev/null 2>&1 &")
+elsif realpath.start_with?('/mnt/')
+  win_path = realpath.split('/').drop(2)
+  win_path[0] = win_path[0] + ':'
+  win_path << File.basename(path)
+  system("nohup #{SUBL_EXE} -n '#{win_path.join('\\')}' >/dev/null 2>&1 &")
+else
+  system("nohup #{SUBL_EXE} -n \"$(convert_linux_path '#{path}')\" >/dev/null 2>&1 &")
+end
