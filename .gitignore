@@ -5,3 +5,4 @@ sublime/User/oscrypto-ca-bundle.crt
 .zcompdump*
 bundles
 init.zsh*
+keychain/
