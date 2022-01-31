@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 SUBL_EXE = '/mnt/c/Program\ Files/Sublime\ Text/sublime_text.exe'
 
-system("nohup #{SUBL_EXE} -n \"$(convert_linux_path '#{ARGV[0]}')\" >/dev/null 2>&1 &")
+system("nohup #{SUBL_EXE} -n \"$(wslpath -w '#{ARGV[0]}')\" >/dev/null 2>&1 &")

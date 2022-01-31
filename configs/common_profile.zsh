@@ -69,7 +69,7 @@ export DOTFILES_CONFIGS_DIR=$dotfiles_dir/configs
 os=$(os_detect)
 
 # ubuntu specific alias
-if [[ $os == *ubuntu* ]]; then
+if [[ $os == *ubuntu* ]] || [ $os = 'wsl' ]; then
   alias upgrade='sudo apt-get update && sudo apt-get upgrade'
   export EDITOR='vi'
 fi

@@ -16,7 +16,7 @@ alias rr='pipe_into_editor rc rails routes'
 
 unalias spf
 function spf() {
-  sp --fail-fast $(convert_windows_path $1)
+  sp --fail-fast $(wslpath -u $1)
 }
 
 function gds {
