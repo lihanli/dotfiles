@@ -34,6 +34,8 @@ function open_common_docs() {
 
   for i in "${arr[@]}"
   do
-    nohup /mnt/c/Program\ Files/Sublime\ Text/sublime_text.exe "$i" >/dev/null 2>&1 &
+    /mnt/c/Program\ Files/Sublime\ Text/sublime_text.exe "$i" >/dev/null 2>&1 &
   done
+
+  wsl_kill sublime_text
 }

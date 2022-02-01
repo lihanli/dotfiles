@@ -9,4 +9,6 @@ subl_path =
     "\"$(wslpath -w '#{ARGV[0]}')\""
   end
 
-system("nohup #{SUBL_EXE} -n #{subl_path} >/dev/null 2>&1 &")
+system("#{SUBL_EXE} -n #{subl_path} >/dev/null 2>&1 &")
+
+system('wsl_kill', 'sublime_text')

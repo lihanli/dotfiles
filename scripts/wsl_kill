@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+`pgrep -f '#{ARGV[0]}'`.split("\n").each do |pid|
+  begin
+    Process.kill('KILL', pid.to_i)
+  rescue Errno::ESRCH
+  end
+end
