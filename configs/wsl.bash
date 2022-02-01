@@ -25,7 +25,7 @@ function gds {
 
 function open_common_docs() {
   subl
-  sleep 2
+
   declare -a arr=(
     'C:\Users\lihan\Google Drive\files\documents\mfd.txt'
     'C:\Users\lihan\Google Drive\files\documents\todo.txt'
