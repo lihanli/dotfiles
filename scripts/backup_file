@@ -34,4 +34,4 @@ lambda do
   basename.insert(insert_index, "_#{Time.now.to_i}")
 end.()
 
-system("aws s3 #{options[:move] || options[:encrypt] ? 'mv' : 'cp'} --storage-class='REDUCED_REDUNDANCY' #{filename} s3://lihan/backups/#{basename}")
+system("aws s3 #{options[:move] || options[:encrypt] ? 'mv' : 'cp'} #{filename} s3://lihan/backups/#{basename}")
