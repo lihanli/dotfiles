@@ -152,4 +152,8 @@ if [ -d $rbenv_dir ]; then
   eval "$(rbenv init -)"
 fi
 
+if [ -d '/home/linuxbrew' ]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
 export PATH
