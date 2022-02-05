@@ -2,7 +2,7 @@ os_detect() {
   if [[ $OSTYPE =~ ^darwin.*$ ]]; then
     echo 'osx'
   else
-    if [[ $(uname -r) =~ ^.*Microsoft$ ]]; then
+    if [[ $(uname -r) =~ ^.*icrosoft.*$ ]]; then
       echo 'wsl'
       return
     fi
