@@ -44,3 +44,8 @@ function open_common_docs() {
 
   wsl_kill sublime_text
 }
+
+# connect network drive
+if ! powershell.exe -c "dir z:" >/dev/null 2>&1; then
+  powershell.exe -c "explorer z:\\"
+fi
