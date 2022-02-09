@@ -1,7 +1,7 @@
 # parameter expansion, command substitution and arithmetic expansion are performed in prompts
 setopt prompt_subst
 # result of last command displays either happy or sad face as a prompt
-smiley="%(?,%{$fg[green]%}☺%{$reset_color%},%{$fg[red]%}☹%{$reset_color%})"
+smiley="%(?,%{$fg[green]%}:)%{$reset_color%},%{$fg[red]%}:(%{$reset_color%})"
 
 # vim mode indicator in prompt (http://superuser.com/questions/151803/how-do-i-customize-zshs-vim-mode)
 vim_ins_mode="%{$fg_bold[green]%}INS%{$reset_color%}"
