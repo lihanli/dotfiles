@@ -47,5 +47,5 @@ function open_common_docs() {
 
 # connect network drive
 if ! powershell.exe -c "dir z:" >/dev/null 2>&1; then
-  powershell.exe -c "explorer z:\\"
+  powershell.exe -c "explorer z:"
 fi
