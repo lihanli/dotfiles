@@ -29,10 +29,6 @@
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"hot_exit": false,
-	"ignored_packages":
-	[
-		"Markdown",
-	],
 	"margin": 0,
 	"remember_open_files": false,
 	"scroll_past_end": true,
