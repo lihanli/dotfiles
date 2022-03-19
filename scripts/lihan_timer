@@ -1,16 +1,3 @@
-#!/usr/bin/env ruby
-
-require 'progressbar'
-require 'bigdecimal'
-
-SLEEP_SECONDS = ARGV[0].to_s
-progressbar = ProgressBar.create
-
-(BigDecimal(SLEEP_SECONDS) / 100).tap do |increment|
-  100.times do
-    sleep(increment)
-    progressbar.increment
-  end
-end
-
-system('powershell.exe', '-c', "(New-Object Media.SoundPlayer 'Z:\\home\\lihan\\dotfiles\\scripts\\resources\\alert.wav').PlaySync();")
+#!/bin/bash
+cd ~/dotfiles/scripts/ruby/lihan_timer
+bundle exec ruby lihan_timer.rb $1
