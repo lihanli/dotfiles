@@ -1,9 +1,6 @@
 {
 	"auto_upgrade_last_run": null,
 	"bootstrapped": true,
-	"in_process_packages":
-	[
-	],
 	"installed_packages":
 	[
 		"AutoHotkey",
@@ -22,7 +19,6 @@
 		"SyntaxManager",
 		"Terminal",
 		"Theme - SoDaReloaded",
-		"TrailingSpaces",
-		"TypeScript",
+		"TrailingSpaces"
 	],
 }
