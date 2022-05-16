@@ -31,10 +31,13 @@ function gds {
 function open_common_docs() {
   subl
 
+  WINDOWS_USER=`cmd.exe /c "echo %USERNAME%"`
+  WINDOWS_USER=$(echo $WINDOWS_USER|tr -d '\r\n')
+
   declare -a arr=(
-    'C:\Users\lihan\Google Drive\files\documents\mfd.txt'
-    'C:\Users\lihan\Google Drive\files\documents\todo.txt'
-    'C:\Users\lihan\Google Drive\files\sysadmin\norgate update.txt'
+    "C:\Users\\$WINDOWS_USER\My Drive\files\documents\mfd.txt"
+    "C:\Users\\$WINDOWS_USER\My Drive\files\documents\todo.txt"
+    "C:\Users\\$WINDOWS_USER\My Drive\files\sysadmin\norgate update.txt"
   )
 
   for i in "${arr[@]}"
