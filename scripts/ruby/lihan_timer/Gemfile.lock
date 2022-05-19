@@ -4,6 +4,7 @@ GEM
     progressbar (1.11.0)
 
 PLATFORMS
+  ruby
   x86_64-linux
 
 DEPENDENCIES
