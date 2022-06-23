@@ -80,6 +80,6 @@ alias rr='rc rails routes | eval $EDITOR -'
 alias dm="rc rake db:migrate"
 alias dmr="rc rake db:migrate:redo"
 alias dmrd='rc rake db:rollback STEP=1'
-alias rl='rc rubocop --display-cop-names --auto-correct -r rubocop-thread_safety'
+alias rl='rc rubocop --display-cop-names --autocorrect -r rubocop-thread_safety'
 alias load_test_schema='RAILS_ENV=test rake db:schema:load'
 alias mo='ne mocha'
