@@ -26,9 +26,6 @@ if [[ ! -d ~/antigen ]]; then
 fi
 
 # one time configs
-email='frankieteardrop%gmail.com'
-git config --global user.name 'Lihan Li'
-git config --global user.email ${email/\%/@}
 git config --global core.excludesfile $configs_dir/gitignore_global
 git config --global core.autocrlf input
 git config color.diff auto --global
