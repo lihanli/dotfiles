@@ -43,4 +43,8 @@
 	[
 		"livestreaming"
 	],
+	"ignored_packages":
+	[
+		"Vintage",
+	],
 }

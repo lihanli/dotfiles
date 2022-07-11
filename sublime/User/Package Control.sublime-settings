@@ -6,6 +6,7 @@
 		"AutoHotkey",
 		"Better CoffeeScript",
 		"ChangeQuotes",
+		"Copy Relative Path",
 		"Cucumber",
 		"Elixir",
 		"Git",
@@ -19,6 +20,9 @@
 		"SyntaxManager",
 		"Terminal",
 		"Theme - SoDaReloaded",
-		"TrailingSpaces"
+		"TrailingSpaces",
+	],
+	"in_process_packages":
+	[
 	],
 }

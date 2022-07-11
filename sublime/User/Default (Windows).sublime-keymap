@@ -1,4 +1,5 @@
 [
   { "keys": ["ctrl+alt+t"], "command": "delete_trailing_spaces" },
-  { "keys": ["ctrl+shift+c"], "command": "copy_path" }
+  {"keys"    : ["ctrl+f5"], "command" : "refresh_folder_list" },
+  { "keys": ["ctrl+shift+c"], "command": "copy_relative_path" }
 ]
