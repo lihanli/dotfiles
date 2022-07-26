@@ -31,6 +31,9 @@ source $dotfiles_dir/functions/util.zsh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
+# docker
+path_append_if_exists /usr/libexec/docker/cli-plugins
+
 # heroku toolbelt
 path_append_if_exists /usr/local/heroku/bin
 
