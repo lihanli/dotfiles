@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+split = ARGV[0].gsub('0x', '').split('')
+
+
+puts "##{split[4..5].join}#{split[2..3].join}#{split[0..1].join}"
