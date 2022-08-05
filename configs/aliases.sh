@@ -83,3 +83,6 @@ alias dmrd='rc rake db:rollback STEP=1'
 alias rl='rc rubocop --display-cop-names --autocorrect -r rubocop-thread_safety'
 alias load_test_schema='RAILS_ENV=test rake db:schema:load'
 alias mo='ne mocha'
+
+alias ,2=',timer 120'
+alias ,9=',timer 90'
