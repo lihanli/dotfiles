@@ -92,8 +92,6 @@ case $os in
     source $DOTFILES_CONFIGS_DIR/wsl.bash;;
 esac
 
-# turn on vimode
-bindkey -v
 # reduce command mode timeout
 export KEYTIMEOUT=5
 # turn off automatic matching of ~/ directories (speeds things up)
