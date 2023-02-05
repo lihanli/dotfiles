@@ -22,13 +22,13 @@ case "$TERM" in
     bindkey '^[[3~' delete-char
 
     # VI MODE KEYBINDINGS (ins mode)
-    bindkey -M viins '^w'    backward-kill-word
-    bindkey -M viins '^a'    beginning-of-line
-    bindkey -M viins '^e'    end-of-line
-    bindkey -M viins '^K'    kill-whole-line
-    bindkey -M viins '^h'    backward-delete-char
-    bindkey -M viins '^?'    backward-delete-char
-    bindkey -M viins '\eOH'  beginning-of-line # Home
-    bindkey -M viins '\eOF'  end-of-line       # End
+    bindkey -M emacs '^w'    backward-kill-word
+    bindkey -M emacs '^a'    beginning-of-line
+    bindkey -M emacs '^e'    end-of-line
+    bindkey -M emacs '^K'    kill-whole-line
+    bindkey -M emacs '^h'    backward-delete-char
+    bindkey -M emacs '^?'    backward-delete-char
+    bindkey -M emacs '\eOH'  beginning-of-line # Home
+    bindkey -M emacs '\eOF'  end-of-line       # End
   ;;
 esac
