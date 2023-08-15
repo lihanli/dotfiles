@@ -19,7 +19,7 @@ OptionParser.new do |opts|
 end.parse!
 
 filename = ARGV[0]
-raise 'file not found' if filename.nil? || !File.exists?(filename)
+raise 'file not found' if filename.nil? || !File.exist?(filename)
 
 if options[:encrypt]
   raise unless system("gpg --cipher-algo AES256 -c #{filename}")
