@@ -25,8 +25,10 @@ function gds {
 function open_common_docs() {
   subl
 
-  WINDOWS_USER=`cmd.exe /c "echo %USERNAME%"`
-  WINDOWS_USER=$(echo $WINDOWS_USER|tr -d '\r\n')
+  if ! [ -n "$WINDOWS_USER" ]; then
+    WINDOWS_USER=`cmd.exe /c "echo %USERNAME%"`
+    WINDOWS_USER=$(echo $WINDOWS_USER|tr -d '\r\n')
+  fi
 
   declare -a arr=(
     "C:\Users\\$WINDOWS_USER\My Drive\files\documents\mfd.txt"
