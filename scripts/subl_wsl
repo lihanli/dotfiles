@@ -11,4 +11,3 @@ subl_path =
 
 system("#{SUBL_EXE} -n #{subl_path} >/dev/null 2>&1 &")
 
-system('wsl_kill', 'sublime_text')
