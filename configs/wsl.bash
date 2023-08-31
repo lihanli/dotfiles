@@ -40,8 +40,6 @@ function open_common_docs() {
   do
     /mnt/c/Program\ Files/Sublime\ Text/sublime_text.exe "$i" >/dev/null 2>&1 &
   done
-
-  wsl_kill sublime_text
 }
 
 # connect network drive
