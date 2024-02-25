@@ -45,6 +45,7 @@
 	],
 	"ignored_packages":
 	[
-		"Vintage",
+		"Vintage"
 	],
+	"index_files": true,
 }
