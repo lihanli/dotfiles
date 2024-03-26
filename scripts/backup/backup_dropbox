@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-raise 'wrong credentials' unless system('aws s3api list-objects --bucket lihan > /dev/null')
+require './check_credentials'
 
 DROPBOX_DIR = "#{ENV['HOME']}/Dropbox"
 raise unless File.directory?(DROPBOX_DIR)
