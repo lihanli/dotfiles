@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 raise "missing gpg" unless `gpg --version`.include?('gpg')
-require './backup/check_credentials'
+require_relative  'backup/check_credentials'
 
 require 'optparse'
 
