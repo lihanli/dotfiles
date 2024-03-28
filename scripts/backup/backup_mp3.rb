@@ -6,4 +6,4 @@ unless Dir.entries(mp3_dir).include?("Flower Travellin' Band - Satori")
   raise 'wrong dir'
 end
 
-system('aws', 's3', 'sync', '--delete', "--storage-class='DEEP_ARCHIVE'", mp3_dir, 's3://lihan/backups/mp3')
+system('aws', 's3', 'sync', '--delete', "--storage-class=DEEP_ARCHIVE", mp3_dir, 's3://lihan/backups/mp3')

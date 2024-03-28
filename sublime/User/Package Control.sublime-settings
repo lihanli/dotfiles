@@ -23,5 +23,8 @@
 	],
 	"in_process_packages":
 	[
+		"Elixir",
+		"MoveTab",
+		"Sass",
 	],
 }

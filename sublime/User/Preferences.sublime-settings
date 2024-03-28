@@ -45,7 +45,10 @@
 	],
 	"ignored_packages":
 	[
+		"Elixir",
+		"MoveTab",
+		"Sass",
 		"Vintage",
 	],
-	"index_files": true,
+	"index_files": false,
 }
