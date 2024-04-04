@@ -43,5 +43,5 @@ function prompt_git() {
   fi
 }
 
-PROMPT='$(ssh_prompt_color)%n@%m%{$reset_color%}|%{$fg_bold[cyan]%}%~%{$reset_color%}$(prompt_git)
+PROMPT='$(ssh_prompt_color)%n@%m%{$reset_color%}|%{$fg[blue]%}%@%{$reset_color%}|%{$fg_bold[cyan]%}%~%{$reset_color%}$(prompt_git)
 ${smiley} > '
