@@ -4,8 +4,8 @@
 	"installed_packages":
 	[
 		"AutoHotkey",
-		"Better CoffeeScript",
 		"ChangeQuotes",
+		"CoffeeScript",
 		"Copy Relative Path",
 		"Cucumber",
 		"Elixir",
